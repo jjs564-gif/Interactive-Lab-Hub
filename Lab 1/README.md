@@ -130,7 +130,7 @@ Use the storyboards to decide what interaction to prototype.
 
 **Summarize the feedback you got here.**
 
-** As the primary sketched, Gal provided feedback on the drawings as we brought the storyboard to life. He helped me fix the posture of the stick figure to emphasize a walking motion, as well as direct his eyes and the eyes of the viewers towards the shoes to highlight the focus on them.**
+**As the primary sketcher, Gal provided feedback on the drawings as we brought the storyboard to life. He helped me fix the posture of the stick figure to emphasize a walking motion, as well as direct his eyes and the eyes of the viewers towards the shoes to highlight the focus on them.**
 
 ## Part B. Act out the Interaction
 
