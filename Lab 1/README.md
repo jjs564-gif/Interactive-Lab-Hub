@@ -130,6 +130,8 @@ Use the storyboards to decide what interaction to prototype.
 
 **Summarize the feedback you got here.**
 
+** As the primary sketched, Gal provided feedback on the drawings as we brought the storyboard to life. He helped me fix the posture of the stick figure to emphasize a walking motion, as well as direct his eyes and the eyes of the viewers towards the shoes to highlight the focus on them.**
+
 ## Part B. Act out the Interaction
 
 Physically act out the interaction you planned. For now, just pretend the light
@@ -138,10 +140,16 @@ it aloud.
 
 **Are there things that seemed better on paper than when acted out?**
 
+**The smoothness of walking seemed better on paper than when acted out; it was tricky to recrete the lights activating as soon as the shoe touches the ground and also walk at a normal speed.**
+
 **Did new ideas about the piece surface once you were on your feet?**
+
+**Once I actually had the phone setup attached to my shoe, it made me realize how attention grabbing they actually are and how you kind of forget about them until others might point them out. From the user's perspective, you look down and see shoes you might normally wear, but from the sides and to others, they are a pretty cool display that kind of gets you to sync up with each step of the user since its associated with a flashing light.**
 
 **Are there key moments in the interaction where things could go in a different direction?**
 Iterate your storyboards to capture key non-sequential aspects of the interaction. 
+
+**I think the main part of the interaction that could go in a different direction is the placement of the light. In the 1990 design, the lights are visible from the heel, mainly the back, while in our recreation they are higher up and cover more of the shoe.**
 
 ## Part C. Prototype the Light (light first!)
 
