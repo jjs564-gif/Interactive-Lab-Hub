@@ -205,6 +205,7 @@ https://github.com/user-attachments/assets/18724566-58f8-474f-a1fc-81e1a4286d1b
 **Please indicate who you collaborated with on this lab.** Be generous in
 acknowledging their contributions, and credit any other influences (YouTube,
 Github, Twitter, a friend who lent you a lamp) that informed your recreation.
+
 **I collaborated with Gal (my partner for the lab).**
 
 ---
