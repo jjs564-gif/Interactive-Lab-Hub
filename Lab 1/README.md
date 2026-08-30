@@ -167,6 +167,8 @@ building any real electronics. (Zoom works well for recording; you can pin the
 video feed of whichever scene you want to capture.)
 
 **Include your first attempts at recording the wizarded set-up here.**
+
+
 https://github.com/user-attachments/assets/a49cf83f-0878-4c01-93b6-77d410e807c3
 
 
@@ -193,6 +195,8 @@ the top of this lab: a viewer who knows the piece should recognize it; a viewer
 who doesn't should come away understanding what it's famous for. How might you illustrate the non-sequential aspects of the interaction in the sketch?
 
 **Include your video here.**
+
+
 https://github.com/user-attachments/assets/18724566-58f8-474f-a1fc-81e1a4286d1b
 
 
