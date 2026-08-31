@@ -128,6 +128,9 @@ and the people around it. If you're new to storyboarding, read
 
 **<img width="1784" height="1140" alt="image" src="https://github.com/user-attachments/assets/4e89ee42-737b-41ea-b781-819c35007de2" />**
 
+**<img width="2006" height="1188" alt="image" src="https://github.com/user-attachments/assets/238740af-061b-487c-87fc-7e1ef34ba605" />**
+
+
 
 Use the storyboards to decide what interaction to prototype.
 
