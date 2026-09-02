@@ -242,7 +242,7 @@ wasn't clear.
 
 **Group 1 feedback: HERE**
 
-**Group 2 project page link: HERE**
+**Group 2 project page link: [HERE](https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201)**
 
 **Group 2 feedback: HERE**
 
