@@ -252,7 +252,7 @@ wasn't clear.
 
 **Group 3 (Project Blinkenlights: Elliot Waxman, Ghaith Khalil)**
 
-**project link: https://github.com/Einsight04/Interactive-Lab-Hub **
+**project link: https://github.com/Einsight04/Interactive-Lab-Hub**
 
 **feedback: I like the way your group timed the steps, having the red turn on and footstep sounds play when the shoe hits the ground. The rhythm of walking was also done nicely, the pace seemed realistic. One thing that could be improved is better animating how increasing pressure from stepping harder results in an increasingly bright display.**
 
