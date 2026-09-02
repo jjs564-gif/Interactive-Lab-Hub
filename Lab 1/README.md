@@ -240,21 +240,21 @@ wasn't clear.
 
 **Group 1 (Brake & Turn Signals: Xiaoxi Xu)**
 
-**project link: https://github.com/xuxx21/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
+- **project link: https://github.com/xuxx21/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
 
-**feedback: I think your interaction does a really good job of showing how the lights on the Light-Up Sneakers respond to a person’s movement! Especially through pressure and the moment when someone steps down. The timing and the scene make the interaction really easy to understand. One small observation I had is that for me the white light feels more like it is actually glowing, probably because of its higher brightness. In comparison, the red light feels a little flatter and doesn’t create as strong of a glowing effect.**
+- **feedback: I think your interaction does a really good job of showing how the lights on the Light-Up Sneakers respond to a person’s movement! Especially through pressure and the moment when someone steps down. The timing and the scene make the interaction really easy to understand. One small observation I had is that for me the white light feels more like it is actually glowing, probably because of its higher brightness. In comparison, the red light feels a little flatter and doesn’t create as strong of a glowing effect.**
 
 **Group 2 (The Clapper: Serena Tsai, Jacey Hu)**
 
-**project link: https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
+- **project link: https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
 
-**feedback: I could clearly understand from the video that stepping triggers the light, so the main interaction between the user and the shoes came across well. However, I couldn't tell from the video that the brightness of the light was supposed to change depending on how hard the user stepped. It might help to exaggerate the difference between a soft step and a hard stomp so that this part of the interaction is more visible.**
+- **feedback: I could clearly understand from the video that stepping triggers the light, so the main interaction between the user and the shoes came across well. However, I couldn't tell from the video that the brightness of the light was supposed to change depending on how hard the user stepped. It might help to exaggerate the difference between a soft step and a hard stomp so that this part of the interaction is more visible.**
 
 **Group 3 (Project Blinkenlights: Elliot Waxman, Ghaith Khalil)**
 
-**project link: https://github.com/Einsight04/Interactive-Lab-Hub**
+- **project link: https://github.com/Einsight04/Interactive-Lab-Hub**
 
-**feedback: I like the way your group timed the steps, having the red turn on and footstep sounds play when the shoe hits the ground. The rhythm of walking was also done nicely, the pace seemed realistic. One thing that could be improved is better animating how increasing pressure from stepping harder results in an increasingly bright display.**
+- **feedback: I like the way your group timed the steps, having the red turn on and footstep sounds play when the shoe hits the ground. The rhythm of walking was also done nicely, the pace seemed realistic. One thing that could be improved is better animating how increasing pressure from stepping harder results in an increasingly bright display.**
 
 ## Remix, Update, or Critique the Master
 
