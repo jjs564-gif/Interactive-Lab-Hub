@@ -238,6 +238,15 @@ wasn't clear.
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 **Summarize the feedback you got from your partners here.**
 
+**Group 1 project page link: HERE**
+**Group 1 feedback: **
+
+**Group 2 project page link: HERE**
+**Group 2 feedback: **
+
+**Group 3 project page link: HERE**
+**Group 3 feedback: **
+
 ## Remix, Update, or Critique the Master
 
 Now that you understand your masterwork from the inside, respond to it. Do the
