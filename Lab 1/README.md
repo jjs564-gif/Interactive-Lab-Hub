@@ -248,7 +248,7 @@ wasn't clear.
 
 **project link: https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
 
-**feedback: HERE**
+**feedback: I could clearly understand from the video that stepping triggers the light, so the main interaction between the user and the shoes came across well. However, I couldn't tell from the video that the brightness of the light was supposed to change depending on how hard the user stepped. It might help to exaggerate the difference between a soft step and a hard stomp so that this part of the interaction is more visible.**
 
 **Group 3 (The Clapper: Serena Tsai, Jacey Hu)**
 
