@@ -238,15 +238,15 @@ wasn't clear.
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 **Summarize the feedback you got from your partners here.**
 
-**Group 1 project page link: HERE**
+**Group 1 project link: LINK**
 
 **Group 1 feedback: HERE**
 
-**Group 2 (The Clapper: Serena Tsai, Jacey Hu) project link: https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
+**Group 2 (The Clapper: Serena Tsai, Jacey Hu) project link: [LINK](https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201)**
 
 **Group 2 feedback: HERE**
 
-**Group 3 project page link: HERE**
+**Group 3 project link: LINK**
 
 **Group 3 feedback: HERE**
 
