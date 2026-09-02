@@ -240,7 +240,7 @@ wasn't clear.
 
 **Group 1 (Brake & Turn Signals: Xiaoxi Xu)**
 
-**project link: https://github.com/xuxx21/Interactive-Lab-Hub/tree/Fall2026/Lab%201 **
+**project link: https://github.com/xuxx21/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
 
 **feedback: I think your interaction does a really good job of showing how the lights on the Light-Up Sneakers respond to a person’s movement! Especially through pressure and the moment when someone steps down. The timing and the scene make the interaction really easy to understand. One small observation I had is that for me the white light feels more like it is actually glowing, probably because of its higher brightness. In comparison, the red light feels a little flatter and doesn’t create as strong of a glowing effect.**
 
