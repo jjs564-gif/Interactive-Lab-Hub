@@ -238,21 +238,21 @@ wasn't clear.
 **Who were the other groups you kibitzed with? Add links to their project pages here.**
 **Summarize the feedback you got from your partners here.**
 
-**Group 2 (The Clapper: Serena Tsai, Jacey Hu)**
+**Group 1 (The Clapper: Serena Tsai, Jacey Hu)**
 
-**project link: [LINK](https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201)**
-
-**feedback: HERE**
-
-**Group 2 (The Clapper: Serena Tsai, Jacey Hu)**
-
-**project link: [LINK](https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201)**
+**project link: HERE**
 
 **feedback: HERE**
 
 **Group 2 (The Clapper: Serena Tsai, Jacey Hu)**
 
-**project link: [LINK](https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201)**
+**project link: https://github.com/ht534-ui/Interactive-Lab-Hub/tree/Fall2026/Lab%201**
+
+**feedback: HERE**
+
+**Group 3 (The Clapper: Serena Tsai, Jacey Hu)**
+
+**project link: HERE**
 
 **feedback: HERE**
 
