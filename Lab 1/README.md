@@ -239,12 +239,15 @@ wasn't clear.
 **Summarize the feedback you got from your partners here.**
 
 **Group 1 project page link: HERE**
+
 **Group 1 feedback: HERE**
 
 **Group 2 project page link: HERE**
+
 **Group 2 feedback: HERE**
 
 **Group 3 project page link: HERE**
+
 **Group 3 feedback: HERE**
 
 ## Remix, Update, or Critique the Master
