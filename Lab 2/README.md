@@ -1,5 +1,5 @@
 # Interactive Prototyping: The Clock of Pi
-**J OF COLLABORATORS HERE**
+**Jonathan Sharpy**
 
 Does it feel like time is moving strangely during this semester?
 
