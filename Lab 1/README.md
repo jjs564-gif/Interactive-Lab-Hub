@@ -275,11 +275,14 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+
+
 **Changes to the Tinkerbelle code**
 
 <img width="1340" height="656" alt="image" src="https://github.com/user-attachments/assets/e6ebd688-046e-4c85-8ed7-d43600d6cf06" />
 
 <img width="1364" height="654" alt="image" src="https://github.com/user-attachments/assets/58c0721d-c6b8-40c4-b524-3ed20967844a" />
+
 
 
 **Pictures of the prototype**
@@ -293,9 +296,11 @@ prototype are great too.**
 <img width="1458" height="1032" alt="image" src="https://github.com/user-attachments/assets/0ca2967d-c5b3-47c2-9030-79d7301e5e29" />
 
 
+
 **Storyboard (depicting one of the demos done with the shoes in the video)**
 
 <img width="1558" height="1830" alt="image" src="https://github.com/user-attachments/assets/fab6ea81-416f-4212-87b0-9a436a2a4d03" />
+
 
 
 **Videos of the prototype**
