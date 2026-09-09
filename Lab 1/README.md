@@ -303,13 +303,13 @@ prototype are great too.**
 
 
 
-**Storyboard (depicting one of the demos done with the shoes in the video)**
+**Storyboard (depicting one of the demos done with the shoe in the video)**
 
 <img width="1558" height="1830" alt="image" src="https://github.com/user-attachments/assets/fab6ea81-416f-4212-87b0-9a436a2a4d03" />
 
 
 
-**Videos of the prototype**
+**Video of the prototype**
 
 https://drive.google.com/file/d/1AN5dQqXxQ2CFLCOdh2gjgyO4xWnpMlMV/view?usp=sharing
 
