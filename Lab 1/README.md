@@ -277,6 +277,18 @@ your response engages with what your master was really doing.
 **Document everything here — especially the storyboard and video. Photos of the
 prototype are great too.**
 
+**Storyboard demonstrating one of the demos done with the shoes in the video**
+
+INSERT HERE
+
+**Pictures of the prototype**
+
+INSERT HERE
+
+**Videos of the prototype**
+
+INSERT HERE
+
 ---
 
 
