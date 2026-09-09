@@ -285,7 +285,13 @@ prototype are great too.**
 
 **Pictures of the prototype**
 
-INSERT HERE
+<img width="768" height="1024" alt="1EB6126C-CB8B-48BD-8E7C-71D7894B9F37_1_105_c" src="https://github.com/user-attachments/assets/a6553a5a-293a-4ad0-8ead-c0cedd6ef905" />
+
+<img width="768" height="1024" alt="C8B77DF8-17D3-401C-9D1D-5CFB549CF1E9_1_105_c" src="https://github.com/user-attachments/assets/2bac1e4f-539c-432c-8f87-80502d8714da" />
+
+<img width="768" height="1024" alt="FC17B485-EC8A-48C1-AE62-40193484F5EB_1_105_c" src="https://github.com/user-attachments/assets/962f1c58-34b7-4b3b-aad5-1dbe37b3044d" />
+
+<img width="768" height="1024" alt="15F256A3-089F-4F5B-BD6E-DB152DA58FCF_1_105_c" src="https://github.com/user-attachments/assets/9e044e00-d95a-4f84-8293-3aae6a4788bb" />
 
 **Storyboard (depicting one of the demos done with the shoes in the video)**
 
