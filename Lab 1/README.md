@@ -277,6 +277,12 @@ prototype are great too.**
 
 
 
+**Approach**
+
+**We used feedback from three peer groups to fix a weakness in our light-up sneaker interaction: the brightness change from footstep pressure was not easy enough to see. To fix this, we changed the color scheme in Tinkerbelle from a full rainbow of swatches to a black-to-red gradient, which better matches the actual red LED heel light. We changed the code so the light could be controlled with keyboard shortcuts instead of clicking the color picker, letting us trigger color changes quickly and quietly while filming. For the physical setup, we used cardboard covering most of the phone screen, showing only about half the display to represent the light being placed at the heel instead of the whole shoe. For the recorded sequence, we added more steps overall, including rocking back on our heels twice to slowly build up brightness to about half the maximum, then jumping and landing with a sharp spike to full brightness to show the impact. These changes were meant to make the connection between footstep pressure and brightness easier to see on camera, directly answering the feedback all three peer groups gave us.**
+
+
+
 **Changes to the Tinkerbelle code**
 
 <img width="1340" height="656" alt="image" src="https://github.com/user-attachments/assets/e6ebd688-046e-4c85-8ed7-d43600d6cf06" />
