@@ -1,4 +1,4 @@
-# Recreating the Masters of Interactive Light
+<img width="1280" height="720" alt="1FB0071A-4E46-40BA-AFDB-DEE1A6F9F8D3_1_102_o" src="https://github.com/user-attachments/assets/cda9e32a-f369-4e19-b18e-b5bb47f65c6c" /># Recreating the Masters of Interactive Light
 
 _This project is to be done in teams of 2._
 
@@ -283,6 +283,7 @@ prototype are great too.**
 
 <img width="1364" height="654" alt="image" src="https://github.com/user-attachments/assets/58c0721d-c6b8-40c4-b524-3ed20967844a" />
 
+
 **Pictures of the prototype**
 
 <img width="1222" height="798" alt="image" src="https://github.com/user-attachments/assets/b7589225-a5da-4c10-a0e2-410f92d255b3" />
@@ -293,13 +294,16 @@ prototype are great too.**
 
 <img width="1458" height="1032" alt="image" src="https://github.com/user-attachments/assets/0ca2967d-c5b3-47c2-9030-79d7301e5e29" />
 
+
 **Storyboard (depicting one of the demos done with the shoes in the video)**
 
 INSERT HERE
 
+
 **Videos of the prototype**
 
-INSERT HERE
+<img width="1280" height="720" alt="1FB0071A-4E46-40BA-AFDB-DEE1A6F9F8D3_1_102_o" src="https://github.com/user-attachments/assets/947c776c-be6e-4ab1-ae61-306d5d31a6c0" />
+
 
 ---
 
