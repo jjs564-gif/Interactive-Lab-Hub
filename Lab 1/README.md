@@ -285,13 +285,13 @@ prototype are great too.**
 
 **Pictures of the prototype**
 
-<img width="768" height="1024" alt="1EB6126C-CB8B-48BD-8E7C-71D7894B9F37_1_105_c" src="https://github.com/user-attachments/assets/a6553a5a-293a-4ad0-8ead-c0cedd6ef905" />
+<img width="1222" height="798" alt="image" src="https://github.com/user-attachments/assets/b7589225-a5da-4c10-a0e2-410f92d255b3" />
 
-<img width="768" height="1024" alt="C8B77DF8-17D3-401C-9D1D-5CFB549CF1E9_1_105_c" src="https://github.com/user-attachments/assets/2bac1e4f-539c-432c-8f87-80502d8714da" />
+<img width="1098" height="750" alt="image" src="https://github.com/user-attachments/assets/0ed6fe66-f4dc-4eaf-8c25-c699da74b1ff" />
 
-<img width="768" height="1024" alt="FC17B485-EC8A-48C1-AE62-40193484F5EB_1_105_c" src="https://github.com/user-attachments/assets/962f1c58-34b7-4b3b-aad5-1dbe37b3044d" />
+<img width="1352" height="1548" alt="image" src="https://github.com/user-attachments/assets/a22f8fca-d466-4e2e-9675-f866d83d5427" />
 
-<img width="768" height="1024" alt="15F256A3-089F-4F5B-BD6E-DB152DA58FCF_1_105_c" src="https://github.com/user-attachments/assets/9e044e00-d95a-4f84-8293-3aae6a4788bb" />
+<img width="1458" height="1032" alt="image" src="https://github.com/user-attachments/assets/0ca2967d-c5b3-47c2-9030-79d7301e5e29" />
 
 **Storyboard (depicting one of the demos done with the shoes in the video)**
 
