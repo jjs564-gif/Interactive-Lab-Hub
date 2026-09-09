@@ -1,5 +1,3 @@
-<img width="1280" height="720" alt="1FB0071A-4E46-40BA-AFDB-DEE1A6F9F8D3_1_102_o" src="https://github.com/user-attachments/assets/cda9e32a-f369-4e19-b18e-b5bb47f65c6c" /># Recreating the Masters of Interactive Light
-
 _This project is to be done in teams of 2._
 
 **Jonathan Sharpy and Gal Alon**
