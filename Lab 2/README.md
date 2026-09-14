@@ -188,7 +188,11 @@ Now you should be able to edit python scripts with Thonny on your Pi.
 
 Option 3. A nowadays often preferred method is to use Microsoft [VS code to remote connect to the Pi](https://www.raspberrypi.com/news/coding-on-raspberry-pi-remotely-with-visual-studio-code/). This gives you access to a fullly equipped and responsive code editor with terminal and file browser.  
 
-Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone! 
+Pro Tip: Using tools like [code-server](https://coder.com/docs/code-server/latest) you can even setup a VS Code coding environment hosted on your raspberry pi and code through a web browser on your tablet or smartphone!
+
+**Picture of the Pi showing the time**
+
+<img width="1222" height="824" alt="image" src="https://github.com/user-attachments/assets/fe78f83f-aa62-4005-8a9f-e6539a96268b" />
 
 ## Part E. Read Part 2. Sketch and brainstorm further interactions and features you would like for your clock.
 
