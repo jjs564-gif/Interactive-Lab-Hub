@@ -205,7 +205,9 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 ** Insert ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf)), storyboards for your ideas **
 
+**Sketches of ideas !!**
 
+<img width="1789" height="1500" alt="F4CB435B-95EC-4B90-A548-8FCF4402CD00_1_201_a" src="https://github.com/user-attachments/assets/b0baf92c-f97f-48ac-8c81-f9516341434f" />
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
