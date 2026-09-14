@@ -207,7 +207,7 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 **Sketches of ideas !!**
 
-<img width="1789" height="1500" alt="F4CB435B-95EC-4B90-A548-8FCF4402CD00_1_201_a" src="https://github.com/user-attachments/assets/b0baf92c-f97f-48ac-8c81-f9516341434f" />
+<img width="1889" height="1361" alt="image" src="https://github.com/user-attachments/assets/f318b018-b6ba-42d6-9019-c3da416358fd" />
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
