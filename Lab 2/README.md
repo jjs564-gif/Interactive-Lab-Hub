@@ -211,6 +211,8 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
+**Names: HERE, HERE, HERE**
+
 # Lab 2 Part 2
 
 ## Prep 
@@ -219,6 +221,12 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
+
+**Feedback from HERE: HERE**
+
+**Feedback from HERE: HERE**
+
+**Feedback from HERE: HERE**
 
 ## Update your Lab Hub
 
