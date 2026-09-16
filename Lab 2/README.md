@@ -211,7 +211,7 @@ We strongly discourage literal digital or analog clock display: Be creative.
 
 **Put the names of the people you gave feedback to here. (Even better, add links to their repos here!)**
 
-**Names: HERE, HERE, HERE**
+**Names: Gal, Jerry, Stephen**
 
 # Lab 2 Part 2
 
@@ -222,11 +222,11 @@ We strongly discourage literal digital or analog clock display: Be creative.
 2. Look at and give feedback on the Part E. for at least 3 other people in the class and get 3 people to comment on your Part E!)
 **Put the feedback for your ideas here.**
 
-**Feedback from HERE: HERE**
+**Feedback from Gal: I think you have a lot of very creative ideas. I like how for your first idea you have 24 segments for the 24 hours of the day. My favorite is probably the third idea though, because there is a lot more to implement and having the times of the day displayed on the right of the screen would be very helpful. The only thing I think you should change is making the raindrop animations every 30s or 1min, so it's more entertaining to look at. You could even have the raindrop slowly move down as time goes by.**
 
-**Feedback from HERE: HERE**
+**I definitely like all three ideas you have provided. One minor critique is that you should include the two buttons next to the display, but other than that, I would personally go with your infinity sign idea as it is pretty symbolic and time does seem infinite and it's also pretty nice to see the spheres fill up every time you check the time.**
 
-**Feedback from HERE: HERE**
+**Feedback from Stephen: The drawings are really well done, and the explanations make each idea easy to understand. I especially like the infinity symbol with a segment filling in each hour. One suggestion would be to have the current segment gradually fill throughout the hour, so you can see progress between the hourly changes.**
 
 ## Update your Lab Hub
 
