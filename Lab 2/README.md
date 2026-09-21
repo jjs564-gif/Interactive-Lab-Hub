@@ -238,11 +238,17 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 **For Part 2, we started the "water accumulation" concept: a blue rectangle that grows from the bottom of the screen as the day progresses, representing time as something that fills up rather than numbers ticking. We added an existing digital time text on top so both are visible at once. This is just the first small piece of the full idea. Water droplets would fall from the top of the screen every so often and build up at the bottom with a ripple effect each time one lands. Over the course of a full day, the screen would slowly fill up, giving a simple, ongoing way to see time passing without needing to read numbers.**
 
+<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />
+
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 ## Make a short video of your modified barebones PiClock
 
-<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />
+https://github.com/user-attachments/assets/ad90fe72-c60e-43e1-a27f-3ab45b743e9e
+
+\*\*\***For this demo, we sped up how fast the water fills so it would be easy to see in a short video instead of taking a whole day. This let us show the main idea, water slowly filling up as time passes, even though the actual logic is the same one that would run over a full 24 hour day in the finished version.**\*\*\*
+
+<img width="565" height="363" alt="Screenshot 2026-09-14 at 7 12 51 PM" src="https://github.com/user-attachments/assets/71714780-f052-4aaa-9209-a2166962335c" />
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -260,10 +266,14 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 ** Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas **
 
+**For our finished PiClock, we built a water accumulation clock that shows the passing of the day through rising water instead of numbers. Every few seconds, a raindrop falls from a small cloud at the top of the screen and lands in the water below, creating a ripple that spreads out and fades before the water level rises a little higher. The surface of the water moves with a gentle wave pattern instead of sitting flat, so it feels more alive. On the right side of the screen, small hour markers show where 12am, 6am, noon, and other times fall, so the water level actually corresponds to a specific point in the day. Every so often, a shark swims across the screen carrying the exact time in white text, so the current time is still shown.**
+
 
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
 
 \*\*\***Take a video of your PiClock.**\*\*\*
+
+https://github.com/user-attachments/assets/2de9f7ed-33bf-4e34-bd36-8020931e7a8f
 
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
