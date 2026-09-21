@@ -238,9 +238,9 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 **For Part 2, we started the "water accumulation" concept: a blue rectangle that grows from the bottom of the screen as the day progresses, representing time as something that fills up rather than numbers ticking. We added an existing digital time text on top so both are visible at once. This is just the first small piece of the full idea. Water droplets would fall from the top of the screen every so often and build up at the bottom with a ripple effect each time one lands. Over the course of a full day, the screen would slowly fill up, giving a simple, ongoing way to see time passing without needing to read numbers.**
 
-<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />
-
 \*\*\***Put a copy of your code in your Lab 2 Github repo.**\*\*\*
+
+<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />
 
 ## Make a short video of your modified barebones PiClock
 
