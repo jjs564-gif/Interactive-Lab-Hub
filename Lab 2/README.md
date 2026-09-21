@@ -246,6 +246,7 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 **For this demo, we sped up how fast the water fills so it would be easy to see in a short video instead of taking a whole day. This let us show the main idea, water slowly filling up as time passes, even though the actual logic is the same one that would run over a full 24 hour day in the finished version.**
 
+**Video of the barebones clock:**
 https://github.com/user-attachments/assets/ad90fe72-c60e-43e1-a27f-3ab45b743e9e
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
@@ -271,12 +272,15 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
+**Video of the final clock:**
 https://github.com/user-attachments/assets/2de9f7ed-33bf-4e34-bd36-8020931e7a8f
 
 
 As always, make sure you document contributions and ideas from others (and AI) explicitly in your writeup.
 
 **Collaboration and AI Acknowledgment: I completed Lab 2 Part 2 collaboratively with Gal Alon. We worked together on selecting and developing the water accumulation clock concept, implementing and testing the design, and producing the final demonstration. We used Claude as an AI assistance tool during coding to help develop, debug, and refine portions of the Python implementation. We reviewed and tested the resulting code on the Raspberry Pi to produce the submitted clock.**
+
+**Link to Gal's Github: https://github.com/ga386-hash/Interactive-Lab-Hub/blob/Fall2026/Lab%202/README.md**
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab.  Make sure the page for the group turn in is linked to your personal Interactive Lab Hub page. 
 
