@@ -247,6 +247,7 @@ Start small, pick just one element of your overall idea, just to show you have a
 **For this demo, we sped up how fast the water fills so it would be easy to see in a short video instead of taking a whole day. This let us show the main idea, water slowly filling up as time passes, even though the actual logic is the same one that would run over a full 24 hour day in the finished version.**
 
 **Video of the barebones clock:**
+
 https://github.com/user-attachments/assets/ad90fe72-c60e-43e1-a27f-3ab45b743e9e
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
@@ -273,6 +274,7 @@ Do take advantage of having done the previous iteration to refine and simplify y
 \*\*\***Take a video of your PiClock.**\*\*\*
 
 **Video of the final clock:**
+
 https://github.com/user-attachments/assets/2de9f7ed-33bf-4e34-bd36-8020931e7a8f
 
 
