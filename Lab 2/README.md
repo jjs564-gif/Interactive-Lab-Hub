@@ -266,7 +266,7 @@ Do take advantage of having done the previous iteration to refine and simplify y
 
 \*\*\***Insert any updates ideas, sketches, [Verplank diagrams](https://ccrma.stanford.edu/courses/250a-fall-2004/IDSketchbok.pdf))!, storyboards for your ideas**\*\*\*
 
-**Ideation process for the final design**
+**Ideation process and implementation breakdown for the final design:**
 
 **We built our final PiClock by starting with the barebones example and adding one piece at a time to make sure everything worked before moving on. We first got a blue bar to rise and fill the screen over 30 seconds just to test the idea, then switched it so a raindrop actually falls every 5 seconds and the water rises a visible amount each time it lands.**
 
