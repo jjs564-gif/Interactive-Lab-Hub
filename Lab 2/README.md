@@ -246,7 +246,7 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 https://github.com/user-attachments/assets/ad90fe72-c60e-43e1-a27f-3ab45b743e9e
 
-\*\*\***For this demo, we sped up how fast the water fills so it would be easy to see in a short video instead of taking a whole day. This let us show the main idea, water slowly filling up as time passes, even though the actual logic is the same one that would run over a full 24 hour day in the finished version.**\*\*\*
+**For this demo, we sped up how fast the water fills so it would be easy to see in a short video instead of taking a whole day. This let us show the main idea, water slowly filling up as time passes, even though the actual logic is the same one that would run over a full 24 hour day in the finished version.**
 
 <img width="565" height="363" alt="Screenshot 2026-09-14 at 7 12 51 PM" src="https://github.com/user-attachments/assets/71714780-f052-4aaa-9209-a2166962335c" />
 
