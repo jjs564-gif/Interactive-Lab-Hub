@@ -242,7 +242,7 @@ Start small, pick just one element of your overall idea, just to show you have a
 
 ## Make a short video of your modified barebones PiClock
 
-\*\*\***<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />**\*\*\*
+<img width="564" height="361" alt="Screenshot 2026-09-14 at 7 02 38 PM" src="https://github.com/user-attachments/assets/ca10e289-3728-48e5-93b7-b487b540eeb9" />
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
