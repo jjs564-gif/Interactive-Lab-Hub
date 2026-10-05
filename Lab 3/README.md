@@ -238,7 +238,7 @@ The system should:
 
 **Demo video of the working system**
 
-https://drive.google.com/file/d/1z_sCTGphQpIcyDMpg4P4ZAV-kFh7JsBl/view?usp=sharing
+https://drive.google.com/file/d/1sMzlLxOKq9achnXSk1yWEcoUJuP0DJcC/view?usp=sharing
 
 ## Test the system
 
