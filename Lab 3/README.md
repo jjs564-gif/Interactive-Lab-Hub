@@ -269,13 +269,3 @@ Answer the following:
 **A useful interaction dataset could contain the user's spoken statement, its transcription, the current workout context, the user's intent, and the response or action VoiceFit should provide. For example, interactions could be categorized as starting an exercise, reporting that a set was easy or difficult, requesting a change in weight, asking about sets or repetitions, reporting fatigue or discomfort, asking what exercise to perform next, or making a request outside the expected categories. Collecting these interactions across many users and workouts could reveal common conversational patterns and help determine which interactions could use predefined responses and which require more flexible reasoning.**
 
 **Voice interaction could also be combined with additional sensing modalities to give the system information about the user's physical state instead of relying entirely on what they say. Thinking beyond the current prototype, wearable sensors could potentially measure signals related to exertion, such as heart rate or movement, while more experimental wearables could examine factors such as perspiration or breathing. Combining these measurements with the user's workout history and spoken feedback could give VoiceFit more context for adapting its recommendations.**
-
-<details>
-  <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
-
-  **Before submitting your README.md:**
-  - This readme.md file has a lot of extra text for guidance.
-  - Remove all instructional text and example prompts from this file.
-  - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-  - Your final submission should be neat, focused on your own work, and easy to read for grading.
-</details>
