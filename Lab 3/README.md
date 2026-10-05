@@ -273,4 +273,4 @@ Answer the following:
 
 **Acknowledgment:**
 
-I worked with Gal Alon on portions of this lab, as noted throughout the documentation. I also used ChatGPT for technical assistance with code explanation, debugging, hardware/software integration, and organizing my own testing observations. All design decisions, implementation, participant testing, and conclusions are my own.
+**I worked with Gal Alon on portions of this lab, as noted throughout the documentation. I also used ChatGPT for technical assistance with code explanation, debugging, hardware/software integration, and organizing my own testing observations. All design decisions, implementation, participant testing, and conclusions are my own.**
