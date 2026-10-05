@@ -233,10 +233,10 @@ The system should:
 
 *Include videos or screencaptures of both the system and the controller.*
 
-**Storyboard of the final system**
+**Storyboard of the final system:**
 <img width="1404" height="560" alt="B4A79E2A-483B-46DF-9B19-F93B1D05B01C_1_105_c" src="https://github.com/user-attachments/assets/bb4a1167-92cd-4aab-9cf2-ac41d5d05314" />
 
-**Demo video of the working system**
+**Video of the working system:**
 
 https://drive.google.com/file/d/1sMzlLxOKq9achnXSk1yWEcoUJuP0DJcC/view?usp=sharing
 
