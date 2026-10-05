@@ -247,18 +247,24 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-**1. What worked well and what did not work well in your system? The system worked well at creating a clear back-and-forth interaction between the user and VoiceFit. The push-to-talk rotary encoder made the timing of the conversation clear, and users naturally waited for VoiceFit's response before continuing with information about their workout. Speech recognition was generally accurate and the response timing felt smooth. One transcription error occurred when Stephen said "I want to do less reps," which was interpreted as "I want to last rest." There were also a few minor inaccuracies during Arnav's interaction, potentially due to the noise in the room.**
+**The system worked well at creating a clear back-and-forth interaction between the user and VoiceFit. The push-to-talk rotary encoder made the timing of the conversation clear, and users naturally waited for VoiceFit's response before continuing with information about their workout. Speech recognition was generally accurate and the response timing felt smooth. One transcription error occurred when Stephen said "I want to do less reps," which was interpreted as "I want to last rest." There were also a few minor inaccuracies during Arnav's interaction, potentially due to the noise in the room.**
 
 **A larger limitation was the scope of the interaction. Without much initial context, users did not necessarily begin at the point in a workout that the predefined responses assumed. I had to use a custom response almost immediately to establish the conversation. Arnav also quickly moved beyond simple set guidance by asking about exercise selection, sets and reps, and pain. This showed that a real workout assistant would need to support a much broader range of conversation.**
 
 ### What worked well about the controller and what didn't?
-**HERE
+**The predefined Wizard controls worked very well when the user's statement matched one of the available options. I could select a response almost immediately, which made the Wizard-of-Oz interaction feel like an autonomous system with very little delay.**
+
+**The limitation was that users frequently said things that did not fit the predefined responses. In those cases, I had to use the custom-response option. This allowed me to keep the interaction going, but typing a response introduced more delay than selecting one of the instant controls. The tests showed that the preset controls are useful for predictable workout interactions, but they do not yet cover the variety of things users naturally ask a workout assistant.**
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-**HERE
+**The testing showed me that an autonomous VoiceFit would need to handle much more than simple post-set feedback. Users naturally asked about what exercise to do next, how many sets and reps to perform, and even whether pain might indicate fatigue or a form problem. Rather than relying only on a fixed set of responses, an autonomous version would likely need a more flexible conversational layer capable of interpreting these different intents and generating context-appropriate responses.**
+
+**The tests also highlighted the importance of the physical environment. Speech recognition worked well overall, but even the classroom produced occasional transcription errors. Since VoiceFit would ultimately be used in a noisy gym, the quality and placement of the microphone and the volume and clarity of the speaker would be important parts of the system design.**
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-**HERE
+**A useful interaction dataset could contain the user's spoken statement, its transcription, the current workout context, the user's intent, and the response or action VoiceFit should provide. For example, interactions could be categorized as starting an exercise, reporting that a set was easy or difficult, requesting a change in weight, asking about sets or repetitions, reporting fatigue or discomfort, asking what exercise to perform next, or making a request outside the expected categories. Collecting these interactions across many users and workouts could reveal common conversational patterns and help determine which interactions could use predefined responses and which require more flexible reasoning.**
+
+**Voice interaction could also be combined with additional sensing modalities to give the system information about the user's physical state instead of relying entirely on what they say. Thinking beyond the current prototype, wearable sensors could potentially measure signals related to exertion, such as heart rate or movement, while more experimental wearables could examine factors such as perspiration or breathing. Combining these measurements with the user's workout history and spoken feedback could give VoiceFit more context for adapting its recommendations.**
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
