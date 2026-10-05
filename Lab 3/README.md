@@ -233,6 +233,13 @@ The system should:
 
 *Include videos or screencaptures of both the system and the controller.*
 
+**Storyboard of the final system**
+<img width="1404" height="560" alt="B4A79E2A-483B-46DF-9B19-F93B1D05B01C_1_105_c" src="https://github.com/user-attachments/assets/bb4a1167-92cd-4aab-9cf2-ac41d5d05314" />
+
+**Demo video of the working system**
+
+https://drive.google.com/file/d/1z_sCTGphQpIcyDMpg4P4ZAV-kFh7JsBl/view?usp=sharing
+
 ## Test the system
 
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard *after* the interaction, but we recognize that can be hard.)
@@ -240,16 +247,18 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+**1. What worked well and what did not work well in your system? The system worked well at creating a clear back-and-forth interaction between the user and VoiceFit. The push-to-talk rotary encoder made the timing of the conversation clear, and users naturally waited for VoiceFit's response before continuing with information about their workout. Speech recognition was generally accurate and the response timing felt smooth. One transcription error occurred when Stephen said "I want to do less reps," which was interpreted as "I want to last rest." There were also a few minor inaccuracies during Arnav's interaction, potentially due to the noise in the room.**
+
+**A larger limitation was the scope of the interaction. Without much initial context, users did not necessarily begin at the point in a workout that the predefined responses assumed. I had to use a custom response almost immediately to establish the conversation. Arnav also quickly moved beyond simple set guidance by asking about exercise selection, sets and reps, and pain. This showed that a real workout assistant would need to support a much broader range of conversation.**
 
 ### What worked well about the controller and what didn't?
-\*\**your answer here*\*\*
+**HERE
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-\*\**your answer here*\*\*
+**HERE
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-\*\**your answer here*\*\*
+**HERE
 
 <details>
   <summary><strong>Submission Cleanup Reminder (Click to Expand)</strong></summary>
