@@ -236,6 +236,10 @@ The system should:
 **Storyboard of the final system:**
 <img width="1404" height="560" alt="B4A79E2A-483B-46DF-9B19-F93B1D05B01C_1_105_c" src="https://github.com/user-attachments/assets/bb4a1167-92cd-4aab-9cf2-ac41d5d05314" />
 
+**How the final system works:**
+
+**VoiceFit runs on the Raspberry Pi and uses a rotary encoder as a push-to-talk control. When the user presses the encoder, the microphone begins listening. Voice activity detection determines when the user has finished speaking, and Whisper transcribes the utterance. The Wizard sees the transcription and selects either a predefined workout response or enters a custom response. Piper then converts the selected response to speech and plays it through the speaker. After VoiceFit finishes speaking, the system waits for the next encoder press before listening again. This prevents VoiceFit's own speech from being captured by the microphone and makes the turn-taking state clear to the user.**
+
 **Video of the working system:**
 
 https://drive.google.com/file/d/1sMzlLxOKq9achnXSk1yWEcoUJuP0DJcC/view?usp=sharing
