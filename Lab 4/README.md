@@ -18,7 +18,7 @@
 
 ## Lab Overview
 Team: <canvas group name>  
-Members: Full Name (netid, github-handle), ...  
+Members: Jonathan Sharpy (jjs564, jjs564-gif), ...  
 Project name: <name>
 
 
