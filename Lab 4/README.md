@@ -282,12 +282,12 @@ Your kit includes these [SparkFun Qwiic OLED screens](https://www.sparkfun.com/p
 
 As you develop your Feast Automata concept, consider where the sensor and actuator need to be placed, what parts move, how electronics are housed, and how the overall form and aesthetics support the interaction.
 
-**\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
+### Draw 5 sketches that explore different physical arrangements for your sensing and actuation.
 
 <img width="1227" height="815" alt="image" src="https://github.com/user-attachments/assets/5e0539da-3f4d-44d5-b8e0-2b7da6104ea6" />
 
 
-## **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
+### What questions do these sketches raise? What do you need to physically prototype to answer them?
 
 The five sketches explore different ways to use sensing and physical feedback to improve everyday dining experiences.
 
@@ -304,7 +304,7 @@ To investigate these questions, I would prototype the physical placement of the 
 For WasteWise specifically, I wanted to test whether a simple rotating cardboard hand could provide recognizable feedback before attempting a more complex sensing and actuation system.
 
 
-**\*\*\*Pick one design to prototype and explain why.\*\*\***
+### Pick one design to prototype and explain why.
 
 I selected **WasteWise**, a device designed to encourage people to reduce food waste by providing immediate physical feedback about leftovers on their plates.
 
@@ -317,7 +317,7 @@ For the low-fidelity prototype, I attached a cardboard hand to a servo motor and
 
 Build a cardboard or other low-fidelity physical prototype of your design.
 
-**\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+### Document your rough prototype with photos and/or video.
 
 **Photos of the WasteWise prototype/setup:**
 
