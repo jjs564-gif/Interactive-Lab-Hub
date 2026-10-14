@@ -249,6 +249,23 @@ python pi_servo_hat_test.py
 For more details and advanced usage, see the [official SparkFun Servo pHAT documentation](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/all#resources-and-going-further).
 A servo motor is a rotary actuator that allows for precise control of angular position. The position is set by the width of an electrical pulse (PWM). You can read [this Adafruit guide](https://learn.adafruit.com/adafruit-arduino-lesson-14-servo-motors/servo-motors) to learn more about how servos work.
 
+### Sensor and Actuator Testing
+
+Before developing WasteWise, I explored several sensing and actuation components using the Raspberry Pi 5. The tests included capacitive touch sensing, proximity detection, RGB/color sensing, gesture recognition, and servo motor control.
+
+The setup photographs and screenshots of the corresponding terminal outputs are organized in the [Sensor and Actuator Testing Evidence](media/sensor_tests/) folder.
+
+| Component | Test evidence |
+|---|---|
+| MPR121 capacitive touch | [Setup](media/sensor_tests/Capacitive_Touch_MPR121_Setup.jpeg) · [Terminal output](media/sensor_tests/Capacitive_Touch_MPR121_Terminal_Output.png) |
+| APDS-9960 proximity | [Terminal output](media/sensor_tests/Proximity_APDS9960_Terminal_Output.png) |
+| APDS-9960 color/light | [Terminal output](media/sensor_tests/Color_Light_APDS9960_Terminal_Output.png) |
+| APDS-9960 gesture | [Terminal output](media/sensor_tests/Gesture_APDS9960_Terminal_Output.png) |
+| Servo motor and Servo pHAT | [Setup](media/sensor_tests/Servo_pHAT_Setup.jpeg) · [Terminal output](media/sensor_tests/Servo_Motor_Terminal_Output.png) |
+
+The servo was first tested independently before being incorporated into the WasteWise cardboard prototype.
+
+
 ---
 
 ### Part D
