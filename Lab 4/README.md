@@ -287,7 +287,7 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 <img width="1227" height="815" alt="image" src="https://github.com/user-attachments/assets/5e0539da-3f4d-44d5-b8e0-2b7da6104ea6" />
 
 
-**\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
+## **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
 
 The five sketches explore different ways to use sensing and physical feedback to improve everyday dining experiences.
 
