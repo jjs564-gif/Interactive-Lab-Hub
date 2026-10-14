@@ -66,7 +66,7 @@ A rotary encoder or joystick allows users to select a dining task or food type. 
 
 **Five concept sketches:**
 
-<img width="1227" height="815" alt="Five physical interaction design sketches" src="https://github.com/user-attachments/assets/5e0539da-3f4d-44d5-b8e0-2b7da6104ea6" />
+<img width="1217" height="811" alt="Devices lab 4" src="https://github.com/user-attachments/assets/437a7796-4bc3-4b16-bb8d-69660b61a2bb" />
 
 ### Questions Raised by the Sketches
 
