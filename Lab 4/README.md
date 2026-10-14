@@ -296,8 +296,8 @@ The main questions they raise are:
 - **WasteWise:** Can a distance sensor reliably distinguish leftover food from an empty plate? Where should it be positioned, and would a physical thumbs-up or thumbs-down gesture effectively communicate food waste?
 - **CookCue:** Can food color provide useful information about cooking progress, and how should the device communicate its assessment without implying that color alone guarantees food safety?
 - **SpoonSense:** Can temperature and food characteristics help recommend a more comfortable utensil material?
-- **Utensil Cleaner:** How could a compact tabletop mechanism clean a utensil between foods without interrupting the meal? How would it avoid transferring contaminants?
-- **Smart Utensil Carousel:** Can a rotating utensil holder make selecting the appropriate utensil more convenient, and how much space would it occupy on the table?
+- **CleanSwipe::** How could a compact tabletop mechanism clean a utensil between foods without interrupting the meal? How would it avoid transferring contaminants?
+- **UtensilCarousel::** Can a rotating utensil holder make selecting the appropriate utensil more convenient, and how much space would it occupy on the table?
 
 To investigate these questions, I would prototype the physical placement of the sensors, the size and movement of the actuators, and how users interact with each device during a meal.
 
