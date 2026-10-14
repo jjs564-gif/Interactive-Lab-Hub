@@ -287,6 +287,20 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
 
+The five sketches explore different ways to use sensing and physical feedback to improve everyday dining experiences.
+
+The main questions they raise are:
+
+- **WasteWise:** Can a distance sensor reliably distinguish leftover food from an empty plate? Where should it be positioned, and would a physical thumbs-up or thumbs-down gesture effectively communicate food waste?
+- **CookCue:** Can food color provide useful information about cooking progress, and how should the device communicate its assessment without implying that color alone guarantees food safety?
+- **SpoonSense:** Can temperature and food characteristics help recommend a more comfortable utensil material?
+- **Utensil Cleaner:** How could a compact tabletop mechanism clean a utensil between foods without interrupting the meal? How would it avoid transferring contaminants?
+- **Smart Utensil Carousel:** Can a rotating utensil holder make selecting the appropriate utensil more convenient, and how much space would it occupy on the table?
+
+To investigate these questions, I would prototype the physical placement of the sensors, the size and movement of the actuators, and how users interact with each device during a meal.
+
+For WasteWise specifically, I wanted to test whether a simple rotating cardboard hand could provide recognizable feedback before attempting a more complex sensing and actuation system.
+
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
 
 Build a cardboard or other low-fidelity physical prototype of your design.
