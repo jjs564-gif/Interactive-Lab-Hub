@@ -18,7 +18,7 @@
 
 ## Lab Overview
 Members: Jonathan Sharpy (jjs564, jjs564-gif), ...  
-Project name: <WasteWise>
+Project name: WasteWise
 
 
 For lab this week, we focus on both sensing and actuation, bringing new modes of input and output into your devices, while also prototyping the physical structure and overall look of the device. You will consider how the physical form supports sensing and actuation, and how these elements come together to shape the interaction and aesthetics of the device.
