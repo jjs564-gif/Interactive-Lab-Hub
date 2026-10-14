@@ -285,6 +285,9 @@ As you develop your Feast Automata concept, consider where the sensor and actuat
 
 **\*\*\*Draw 5 sketches that explore different physical arrangements for your sensing and actuation.\*\*\***
 
+SKETCHES HERE
+
+
 **\*\*\*What questions do these sketches raise? What do you need to physically prototype to answer them?\*\*\***
 
 The five sketches explore different ways to use sensing and physical feedback to improve everyday dining experiences.
@@ -302,13 +305,46 @@ To investigate these questions, I would prototype the physical placement of the 
 For WasteWise specifically, I wanted to test whether a simple rotating cardboard hand could provide recognizable feedback before attempting a more complex sensing and actuation system.
 
 
-
-
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
+
+I selected **WasteWise**, a device designed to encourage people to reduce food waste by providing immediate physical feedback about leftovers on their plates.
+
+I chose this concept because it addresses an everyday problem while offering a straightforward interaction between sensing and actuation. The intended system uses distance sensing to estimate how much food remains on a plate, then responds with a physical gesture.
+
+My original idea involved two mechanical hands clapping to celebrate minimal food waste. However, I simplified the mechanism to a single rotating hand that could display a thumbs-up or thumbs-down. This reduced the mechanical complexity while preserving the central idea of communicating feedback through physical movement.
+
+For the low-fidelity prototype, I attached a cardboard hand to a servo motor and used a manually triggered rotation to demonstrate the intended interaction. This allowed me to focus on testing the clarity and feasibility of the physical feedback before integrating automatic food detection.
+
 
 Build a cardboard or other low-fidelity physical prototype of your design.
 
 **\*\*\*Document your rough prototype with photos and/or video.\*\*\***
+
+**Photos of the WasteWise prototype/setup:**
+
+<img width="1536" height="2048" alt="WasteWise_Prototype_01_Assembly" src="https://github.com/user-attachments/assets/15b52ad7-6fb9-4241-9b29-6f9d952efee8" />
+
+<img width="1536" height="2048" alt="WasteWise_Prototype_02_Servo_Horn_Attachment" src="https://github.com/user-attachments/assets/fbfb1160-04a6-41e7-b208-9aa7cee048a7" />
+
+<img width="1536" height="2048" alt="WasteWise_Prototype_03_Thumbs_Up_Front" src="https://github.com/user-attachments/assets/983c9a08-b1a7-40d9-9fb0-7e97fd98493f" />
+
+
+**Video of the WasteWise prototype:**
+
+https://drive.google.com/file/d/12jNM7uuJcP61YKrk7G9qeKD65bir73ut/view?usp=sharing
+
+**WasteWise explanation:**
+
+### Prototype Implementation and Demonstration
+
+I created a cardboard thumbs-up cutout and attached it to the horn of a micro-servo motor connected to the SparkFun Pi Servo pHAT and Raspberry Pi 5.
+
+Using a Python script, I calibrated the servo to rotate between approximately **60° and 150°**. Pressing the spacebar activates the rotation, turning the cardboard thumbs-up into a thumbs-down.
+
+For the Wizard-of-Oz demonstration, I positioned a distance sensor above a plate containing leftover food. When the sensor was positioned over the leftovers, I manually pressed the spacebar to trigger the servo, producing a thumbs-down gesture to represent detected food waste.
+
+The sensing-to-actuation connection was simulated rather than automated. This prototype demonstrates the intended physical interaction, while automatic leftover detection and quantitative food-waste estimation remain goals for future development.
+
 
 ---
 
