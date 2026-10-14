@@ -156,7 +156,7 @@ I used ChatGPT as a technical and documentation assistant during this lab.
 
 AI assistance included guidance with Raspberry Pi setup, Python environment configuration, sensor and servo testing, troubleshooting, and development of the keyboard-controlled servo demonstration script.
 
-I also used ChatGPT to help organize and refine my written documentation and to guide creation of my visual references based on my five original dining concepts.
+I also used ChatGPT to help organize and refine my written documentation and to guide the creation of my visual references based on my five original dining concepts.
 
 The concept selection, design decisions, cardboard prototype construction, hardware testing, servo calibration, demonstration recording, and final design sketches were completed by me. The Wizard-of-Oz demonstration and its simulated sensing behavior are explicitly identified in the documentation.
 
