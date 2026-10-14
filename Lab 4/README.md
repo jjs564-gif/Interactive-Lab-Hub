@@ -301,6 +301,9 @@ To investigate these questions, I would prototype the physical placement of the 
 
 For WasteWise specifically, I wanted to test whether a simple rotating cardboard hand could provide recognizable feedback before attempting a more complex sensing and actuation system.
 
+
+
+
 **\*\*\*Pick one design to prototype and explain why.\*\*\***
 
 Build a cardboard or other low-fidelity physical prototype of your design.
