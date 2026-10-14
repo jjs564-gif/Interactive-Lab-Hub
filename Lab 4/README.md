@@ -17,7 +17,8 @@
 ---
 
 ## Lab Overview
-Members: Jonathan Sharpy (jjs564, jjs564-gif) 
+Members: Jonathan Sharpy (jjs564, jjs564-gif)
+
 Project name: WasteWise
 
 
