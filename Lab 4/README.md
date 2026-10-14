@@ -1,294 +1,74 @@
-# Ph-UI!!!
+# Lab 4: Ph-UI!!!
 
-<details>
-	<summary><strong>Instructions for Students (Click to Expand)</strong></summary>
-  
-	**Submission Cleanup Reminder:**
-	- This README.md contains extra instructional text for guidance.
-	- Before submitting, remove all instructional text and example prompts from this file.
-	- You may delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
-	- Your final submission should be neat, focused on your own work, and easy to read for grading.
-  
-	This helps ensure your README.md is clear, professional, and uniquely yours!
-</details>
+**Student:** Jonathan Sharpy  
+**Cornell Tech | Developing and Designing Interactive Devices**  
+**Project:** WasteWise
 
 ---
 
----
+## Part 1: Sensing and Actuation Exploration
 
-## Lab Overview
-Members: Jonathan Sharpy (jjs564, jjs564-gif)
+### Sensor and Actuator Testing
 
-Project name: WasteWise
+Before developing WasteWise, I explored several sensing and actuation components using the Raspberry Pi 5. The tests included capacitive touch sensing, proximity detection, RGB/color sensing, gesture recognition, and servo motor control.
 
+The setup photographs and screenshots of the corresponding terminal outputs are organized in the [Sensor and Actuator Testing Evidence](media/sensor_tests/) folder.
 
-For lab this week, we focus on both sensing and actuation, bringing new modes of input and output into your devices, while also prototyping the physical structure and overall look of the device. You will consider how the physical form supports sensing and actuation, and how these elements come together to shape the interaction and aesthetics of the device.
+| Component | Test Evidence |
+|---|---|
+| MPR121 capacitive touch | [Setup](media/sensor_tests/Capacitive_Touch_MPR121_Setup.jpeg) · [Terminal output](media/sensor_tests/Capacitive_Touch_MPR121_Terminal_Output.png) |
+| APDS-9960 proximity | [Terminal output](media/sensor_tests/Proximity_APDS9960_Terminal_Output.png) |
+| APDS-9960 color/light | [Terminal output](media/sensor_tests/Color_Light_APDS9960_Terminal_Output.png) |
+| APDS-9960 gesture | [Terminal output](media/sensor_tests/Gesture_APDS9960_Terminal_Output.png) |
+| Servo motor and Servo pHAT | [Setup](media/sensor_tests/Servo_pHAT_Setup.jpeg) · [Terminal output](media/sensor_tests/Servo_Motor_Terminal_Output.png) |
 
----
+The servo was first tested independently before being incorporated into the WasteWise cardboard prototype.
 
-## Lab Structure
+**Testing observations:**
 
-A) [Capacitive Sensing](#part-a)
+- **Capacitive touch:** The MPR121 detected touch events on its electrode contacts and displayed the corresponding messages in the terminal.
+- **Proximity:** The APDS-9960 proximity readings changed as objects moved closer to or farther from the sensor.
+- **Color/light:** The APDS-9960 produced different RGB and light readings when exposed to different surfaces and lighting conditions.
+- **Gesture:** The APDS-9960 detected directional hand gestures, including left, right, and up.
+- **Servo actuation:** The SparkFun Servo pHAT successfully controlled the servo motor's angular position, demonstrating repeatable physical movement.
 
-B) [More Sensors](#part-b)
-
-C) [Servo Actuation](#part-c)
-
-D) [Physical Interaction Design: Feast Automata](#part-d)
-
-E) [Build & Integrate](#part-e)
-
-F) [Final Documentation](#part-f)
-
----
-
-## Part 1 Lab Preparation
+These tests helped establish which sensing and actuation capabilities could support the physical interaction concepts explored below.
 
 ---
 
-### Get the latest content:
-As always, pull updates from the class Interactive-Lab-Hub to both your Pi and your own GitHub repo. As we discussed in the class, there are 3 ways you can do so:
+## Physical Interaction Design: Feast Automata
 
+### Five Design Sketches
 
-Option 1: On the Pi, `cd` to your `Interactive-Lab-Hub`, pull the updates from upstream (class lab-hub) and push the updates back to your own GitHub repo. You will need the personal access token for this.
-```
-pi@ixe00:~$ cd Interactive-Lab-Hub
-pi@ixe00:~/Interactive-Lab-Hub $ git pull upstream Fall2026
-pi@ixe00:~/Interactive-Lab-Hub $ git add .
-pi@ixe00:~/Interactive-Lab-Hub $ git commit -m "get lab4 content"
-pi@ixe00:~/Interactive-Lab-Hub $ git push
-```
+I explored five dining-related concepts that combine sensing and actuation to create playful or useful physical interactions.
 
-Option 2: On your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
+The sketches illustrate different physical arrangements, including the placement of sensors, actuators, and other components relative to the user and dining environment.
 
-Option 3: (preferred) use the Github.com interface to update the changes.
+**1. WasteWise: Plate Scanner**
 
----
+A distance sensor observes food remaining on a plate. A servo-driven hand provides a thumbs-up or thumbs-down gesture to communicate feedback about food waste.
 
-### Quick Start: Python Environment Setup
+**2. CookCue: Food Readiness Assistant**
 
-1. **Create and activate a virtual environment in Lab 4:**
-	```bash
-	cd ~/Interactive-Lab-Hub/Lab\ 4
-	python3 -m venv .venv
-	source .venv/bin/activate
-	```
-2. **Install all Lab 4 requirements:**
-	```bash
-	pip install -r requirements2025.txt
-	```
-3. **Check CircuitPython Blinka installation:**
-	```bash
-	python blinkatest.py
-	```
-	If you see "Hello blinka!", your setup is correct. If not, follow the troubleshooting steps in the file or ask for help.
+A color sensor examines the surface appearance of food during cooking. A speaker provides feedback about its appearance or cooking progress. Color alone would not be used to establish food safety.
 
----
+**3. SpoonSense: Utensil Advisor**
 
-### Gathering materials for this lab:
+A sensor or user input identifies characteristics of the food, such as temperature or type. A physical indicator recommends an appropriate utensil material.
 
-* Cardboard (start collecting those shipping boxes!)
-* Found objects and materials--like bananas and twigs.
-* Cutting board
-* Cutting tools
-* Markers
+**4. CleanSwipe: Automatic Utensil Cleaner**
 
+A proximity sensor detects when a utensil enters a tabletop cleaning mechanism. A servo moves a cleaning component across the utensil's surface.
 
-(We do offer shared cutting board, cutting tools, and markers on the class cart during the lab, so do not worry if you don't have them!)
+**5. UtensilCarousel: Smart Utensil Selector**
 
----
+A rotary encoder or joystick allows users to select a dining task or food type. A servo-driven carousel rotates to present the appropriate utensil.
 
-### Prototyping References 
+**Five concept sketches:**
 
-* [What do prototypes prototype?](https://www.semanticscholar.org/paper/What-do-Prototypes-Prototype-Houde-Hill/30bc6125fab9d9b2d5854223aeea7900a218f149)
-* [Paper prototyping](https://www.uxpin.com/studio/blog/paper-prototyping-the-practical-beginners-guide/) is used by UX designers to quickly develop interface ideas and run them by people before any programming occurs. 
-* [Cardboard prototypes](https://www.youtube.com/watch?v=k_9Q-KDSb9o) help interactive product designers to work through additional issues, like how big something should be, how it could be carried, where it would sit. 
-* [Tips to Cut, Fold, Mold and Papier-Mache Cardboard](https://makezine.com/2016/04/21/working-with-cardboard-tips-cut-fold-mold-papier-mache/) from Make Magazine.
-* [Surprisingly complicated forms](https://www.pinterest.com/pin/50032245843343100/) can be built with paper, cardstock or cardboard.  The most advanced and challenging prototypes to prototype with paper are [cardboard mechanisms](https://www.pinterest.com/helgangchin/paper-mechanisms/) which move and change. 
-* [Dyson Vacuum Cardboard Prototypes](http://media.dyson.com/downloads/JDF/JDF_Prim_poster05.pdf)
-<p align="center"><img src="https://dysonthedesigner.weebly.com/uploads/2/6/3/9/26392736/427342_orig.jpg"  width="200" > </p>
+<img width="1227" height="815" alt="Five physical interaction design sketches" src="https://github.com/user-attachments/assets/5e0539da-3f4d-44d5-b8e0-2b7da6104ea6" />
 
-### Feast Automata Inspirations
-
-* [Simone Giertz - The Breakfast Machine](https://www.youtube.com/watch?v=E2evC2xTNWg) turns an everyday breakfast routine into a deliberately awkward robotic performance.
-* [Pee-wee’s Big Adventure - Breakfast Machine](https://www.classhook.com/resources/1295-pee-wee-s-big-adventure-pee-wee-s-breakfast-machine?utm_source=chatgpt.com) An elaborate Rube Goldberg-style machine turns the ordinary routine of making breakfast into a playful mechanical performance.
-* [Wallace & Gromit - The Autochef](https://www.google.com/search?sca_esv=66d2cd5ecf989ed9&sxsrf=APpeQnuwAWHrA3R0b1GeoQ4r-spKos3vUQ:1789367781228&udm=7&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8cxpBkeIeqYwoCbfNVc4vKE7plZzta63Pe5DpJ3XFR9XzI_yj6fb6bfPt1x_5u3nRcG7tR9jg4Omd7-UnDuaw5i86wRQqe-045kPXObjb1eDS649ikhB0y_hSFYfNioDnA60A2i_oC1IzIZywb7ERnDQqnSx10JnfJEaAauzJXglx4123_vjf0_54bKrF6QjM9ne5i3g&q=Wallace+%26+Gromit+%E2%80%94+The+Autochef&sa=X&ved=2ahUKEwiI0OO3uu2WAxVHEFkFHQ3iAOEQtKgLegQIFRAB&biw=1197&bih=613&dpr=2.5#fpstate=ive&vld=cid:72c3eb07,vid:2igRcGxlshA,st:0)
-* [Nik Ramage - Jelly Wobbler](http://www.youtube.com/watch?v=pj2t71q68sY#t=33) makes the simple act of wobbling jelly into a dedicated machine.
-* [Zekun Chang - Blah Blah](https://zekunchang.com/portfolio/blah-blah/) is an alcohol machine that presents a playful commentary on drunken behavior.
-
-### Mechanical Prototyping Resource
-
-* [Gear Template Generator](https://woodgears.ca/gear_cutting/template.html) can help you prototype simple gear mechanisms for translating servo motion into physical movement.
-
-
----
-
-### Part A
-### Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
-
-We want to introduce you to the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in your kit. It's one of the most flexible input devices we are able to provide. At boot, it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes, it considers it a user touch. You can attach any conductive material. In your kit, you have copper tape that will work well, but don't limit yourself! In the example below, we use Twizzlers--you should pick your own objects.
-
-
-<p float="left">
-<img src="https://cdn-learn.adafruit.com/guides/cropped_images/000/003/226/medium640/MPR121_top_angle.jpg?1609282424" height="150" />
- 
-</p>
-
-Plug in the capacitive sensor board with the QWIIC connector. Connect your Twizzlers with either the copper tape or the alligator clips (the clips work better). Install the latest requirements from your working virtual environment:
-
-These Twizzlers are connected to pads 6 and 10. When you run the code and touch a Twizzler, the terminal will print out the following
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python cap_test.py 
-Twizzler 10 touched!
-Twizzler 6 touched!
-```
-
----
-
-### Part B
-### More sensors
-
-#### Light/Proximity/Gesture sensor (APDS-9960)
-
-We here want you to get to know this awesome sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595). It is capable of sensing proximity, light (also RGB), and gesture! 
- 
-<img src="https://cdn-shop.adafruit.com/970x728/3595-06.jpg" width=200>
- 
-
-Connect it to your pi with Qwiic connector and try running the three example scripts individually to see what the sensor is capable of doing!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python proximity_test.py
-...
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python gesture_test.py
-...
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python color_test.py
-...
-```
-
-You can go the the [Adafruit GitHub Page](https://github.com/adafruit/Adafruit_CircuitPython_APDS9960) to see more examples for this sensor!
-
-#### Rotary Encoder 
-
-A rotary encoder is an electro-mechanical device that converts the angular position to analog or digital output signals. The [Adafruit rotary encoder](https://www.adafruit.com/product/4991#technical-details) we ordered for you came pre-soldered, so you do NOT need to solder anything.
-<p float="left">
-
-   
-<img src="https://cdn-shop.adafruit.com/970x728/377-02.jpg" height="200" />
-<img src="https://cdn-shop.adafruit.com/970x728/4991-09.jpg" height="200">
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script, it comes with an additional button which might be useful for your design!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python encoder_test.py
-```
-
-You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/python-circuitpython) to learn more about the sensor! The sensor actually comes with an LED (neo pixel): Can you try lighting it up? 
-
-#### Joystick 
-
-
-A [joystick](https://www.sparkfun.com/products/15168) can be used to sense and report the input of the stick for it pivoting angle or direction. It also comes with a button input!
-
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/3/5/5/8/15168-SparkFun_Qwiic_Joystick-01.jpg" height="200" />
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script to see what it can do!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python joystick_test.py
-```
-
-You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joystick_Py) to learn more about the sensor!
-
-#### Distance Sensor
-
-
-Earlier we have asked you to play with the proximity sensor, which is able to sense objects within a short distance. Here, we offer [Sparkfun Proximity Sensor Breakout](https://www.sparkfun.com/products/15177), With the ability to detect objects up to 20cm away.
-
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/3/5/9/2/15177-SparkFun_Proximity_Sensor_Breakout_-_20cm__VCNL4040__Qwiic_-01.jpg" height="200" />
-
-</p>
-
-Connect it to your pi with Qwiic connector and try running the example script to see how it works!
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python qwiic_distance.py
-```
-
-You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Proximity_Py) to learn more about the sensor and see other examples
-
----
-
-### Part C
-### Servo Actuation
-
-Now that you have explored several forms of sensing, add physical output by learning to control a servo motor. Complete the Servo pHAT setup and basic servo test before beginning your interaction design.
-
-### Servo Control with SparkFun Servo pHAT
-For this lab, you will use the **SparkFun Servo pHAT** to control a micro servo (such as the Miuzei MS18 or similar 9g servo). The Servo pHAT stacks directly on top of the Adafruit Mini PiTFT (135×240) display without pin conflicts:
-- The Mini PiTFT uses SPI (GPIO22, 23, 24, 25) for display and buttons ([SPI pinout](https://pinout.xyz/pinout/spi)).
-- The Servo pHAT uses I²C (GPIO2 & 3) for the PCA9685 servo driver ([I2C pinout](https://pinout.xyz/pinout/i2c)).
-- Since SPI and I²C are separate buses, you can use both boards together.
-**⚡ Power:**
-- Plug a USB-C cable into the Servo pHAT to provide enough current for the servos. The Pi itself should still be powered by its own USB-C supply. Do NOT power servos from the Pi’s 5V rail.
-
-<p align="center">
-    <img src="Servo_pHAT.gif" alt="Servo pHAT Demo" width="400"/>
-</p>
-
-**Basic Python Example:**
-We provide a simple example script: `Lab 4/pi_servo_hat_test.py` (requires the `pi_servo_hat` Python package).
-Run the example:
-```
-python pi_servo_hat_test.py
-```
-For more details and advanced usage, see the [official SparkFun Servo pHAT documentation](https://learn.sparkfun.com/tutorials/pi-servo-phat-v2-hookup-guide/all#resources-and-going-further).
-A servo motor is a rotary actuator that allows for precise control of angular position. The position is set by the width of an electrical pulse (PWM). You can read [this Adafruit guide](https://learn.adafruit.com/adafruit-arduino-lesson-14-servo-motors/servo-motors) to learn more about how servos work.
-
----
-
-### Part D
-### Physical Interaction Design: Feast Automata
-
-**Feast Automata:** build a device that **transforms ordinary dining rituals into playful physical interactions.** Begin with a familiar experience around eating, drinking, cooking, serving, or sharing food, and explore how sensing and actuation might augment, exaggerate, automate, or reinterpret your dining experience.
-
-In this part, use the sensing techniques from Parts A–B and the servo actuation from Part C to develop a physical interaction.
-
-#### Physical considerations for sensing
-
-Sensors need to be positioned in specific locations or orientations to make them useful for an application. Choose a sensor that fits the dining interaction you want to explore. For example, a distance sensor could detect when a cup is placed on a coaster; where the sensor is positioned determines what it can reliably detect.
-
-Think about how the larger object needs to be shaped so the sensor can work reliably, where the actuator needs to sit, what moves, and how a person encounters the interaction.
-
-#### Physical Form and Housing
-
-Think about how your sensor, actuator, and electronics are physically arranged within your prototype. Consider where components need to be placed, what parts move, how the device is supported or enclosed, and how the overall form and aesthetics shape the interaction.
-
-Use cardboard, paper, found objects, or other low-fidelity materials to quickly prototype the physical structure before refining your final design.
-
-#### Optional Display Feedback: Qwiic OLED
-
-Your kit includes these [SparkFun Qwiic OLED screens](https://www.sparkfun.com/products/17153). These use less power than the MiniTFTs you have mounted on the GPIO pins of the Pi, but, more importantly, they can be more flexibly mounted elsewhere on your physical interface. The way you program this display is almost identical to the way you program a  Pi display. Take a look at `oled_test.py` and some more of the [Adafruit examples](https://github.com/adafruit/Adafruit_CircuitPython_SSD1306/tree/master/examples).
-
-<p float="left">
-<img src="https://cdn.sparkfun.com//assets/parts/1/6/1/3/5/17153-SparkFun_Qwiic_OLED_Display__0.91_in__128x32_-01.jpg" height="200" />
-
-</p>
-
-
-As you develop your Feast Automata concept, consider where the sensor and actuator need to be placed, what parts move, how electronics are housed, and how the overall form and aesthetics support the interaction.
-
-### Draw 5 sketches that explore different physical arrangements for your sensing and actuation.
-
-<img width="1227" height="815" alt="image" src="https://github.com/user-attachments/assets/5e0539da-3f4d-44d5-b8e0-2b7da6104ea6" />
-
-
-### What questions do these sketches raise? What do you need to physically prototype to answer them?
+### Questions Raised by the Sketches
 
 The five sketches explore different ways to use sensing and physical feedback to improve everyday dining experiences.
 
@@ -304,8 +84,9 @@ To investigate these questions, I would prototype the physical placement of the 
 
 For WasteWise specifically, I wanted to test whether a simple rotating cardboard hand could provide recognizable feedback before attempting a more complex sensing and actuation system.
 
+---
 
-### Pick one design to prototype and explain why.
+### Selected Design: WasteWise
 
 I selected **WasteWise**, a device designed to encourage people to reduce food waste by providing immediate physical feedback about leftovers on their plates.
 
@@ -315,40 +96,47 @@ My original idea involved two mechanical hands clapping to celebrate minimal foo
 
 For the low-fidelity prototype, I attached a cardboard hand to a servo motor and used a manually triggered rotation to demonstrate the intended interaction. This allowed me to focus on testing the clarity and feasibility of the physical feedback before integrating automatic food detection.
 
+---
 
-### Sensor and Actuator Testing
+### Low-Fidelity Prototype
 
-Before developing WasteWise, I explored several sensing and actuation components using the Raspberry Pi 5. The tests included capacitive touch sensing, proximity detection, RGB/color sensing, gesture recognition, and servo motor control.
+I constructed a physical WasteWise prototype using a cardboard hand, a micro-servo motor, the SparkFun Pi Servo pHAT, and a Raspberry Pi 5.
 
-The setup photographs and screenshots of the corresponding terminal outputs are organized in the [Sensor and Actuator Testing Evidence](media/sensor_tests/) folder.
+The cardboard hand was attached to the servo horn, allowing the motor to rotate the gesture between different orientations.
 
-| Component | Test evidence |
-|---|---|
-| MPR121 capacitive touch | [Setup](media/sensor_tests/Capacitive_Touch_MPR121_Setup.jpeg) · [Terminal output](media/sensor_tests/Capacitive_Touch_MPR121_Terminal_Output.png) |
-| APDS-9960 proximity | [Terminal output](media/sensor_tests/Proximity_APDS9960_Terminal_Output.png) |
-| APDS-9960 color/light | [Terminal output](media/sensor_tests/Color_Light_APDS9960_Terminal_Output.png) |
-| APDS-9960 gesture | [Terminal output](media/sensor_tests/Gesture_APDS9960_Terminal_Output.png) |
-| Servo motor and Servo pHAT | [Setup](media/sensor_tests/Servo_pHAT_Setup.jpeg) · [Terminal output](media/sensor_tests/Servo_Motor_Terminal_Output.png) |
+For this initial prototype, I focused on demonstrating the physical feedback mechanism rather than constructing a complete housing or implementing automatic food detection.
 
-The servo was first tested independently before being incorporated into the WasteWise cardboard prototype.
+**Prototype photographs**
 
+**1. WasteWise prototype assembly**
 
-### Build a cardboard or other low-fidelity physical prototype of your design. Document your rough prototype with photos and/or video.
+<img width="1536" height="2048" alt="WasteWise prototype assembly" src="https://github.com/user-attachments/assets/15b52ad7-6fb9-4241-9b29-6f9d952efee8" />
 
-**Photos of the WasteWise prototype/setup:**
+**2. Servo horn and cardboard attachment**
 
-<img width="1536" height="2048" alt="WasteWise_Prototype_01_Assembly" src="https://github.com/user-attachments/assets/15b52ad7-6fb9-4241-9b29-6f9d952efee8" />
+<img width="1536" height="2048" alt="Servo horn attachment" src="https://github.com/user-attachments/assets/fbfb1160-04a6-41e7-b208-9aa7cee048a7" />
 
-<img width="1536" height="2048" alt="WasteWise_Prototype_02_Servo_Horn_Attachment" src="https://github.com/user-attachments/assets/fbfb1160-04a6-41e7-b208-9aa7cee048a7" />
+**3. Cardboard thumbs-up prototype**
 
-<img width="1536" height="2048" alt="WasteWise_Prototype_03_Thumbs_Up_Front" src="https://github.com/user-attachments/assets/983c9a08-b1a7-40d9-9fb0-7e97fd98493f" />
+<img width="1536" height="2048" alt="Cardboard thumbs-up prototype" src="https://github.com/user-attachments/assets/983c9a08-b1a7-40d9-9fb0-7e97fd98493f" />
 
+---
 
-**Video of the WasteWise prototype:**
+### Wizard-of-Oz Demonstration
 
-https://drive.google.com/file/d/12jNM7uuJcP61YKrk7G9qeKD65bir73ut/view?usp=sharing
+**[Watch the WasteWise Prototype Demonstration](https://drive.google.com/file/d/12jNM7uuJcP61YKrk7G9qeKD65bir73ut/view?usp=sharing)**
 
-**WasteWise explanation:**
+The video demonstrates the intended interaction between detecting leftover food and providing physical feedback.
+
+I first position the distance sensor over a plate containing leftover food. When the sensor is moved over the leftovers, I manually trigger the servo motor by pressing the spacebar on my laptop.
+
+The servo rotates the cardboard hand downward, displaying a thumbs-down gesture to represent food waste.
+
+This is a **Wizard-of-Oz prototype**: the intended sensing interaction is simulated by the operator, while the servo motor's physical movement is real.
+
+---
+
+### Prototype Implementation
 
 I created a cardboard thumbs-up cutout and attached it to the horn of a micro-servo motor connected to the SparkFun Pi Servo pHAT and Raspberry Pi 5.
 
@@ -358,6 +146,19 @@ For the Wizard-of-Oz demonstration, I positioned a distance sensor above a plate
 
 The sensing-to-actuation connection was simulated rather than automated. This prototype demonstrates the intended physical interaction, while automatic leftover detection and quantitative food-waste estimation remain goals for future development.
 
+**Prototype code:** [wastewise_demo.py](wastewise_demo.py)
+
+---
+
+## AI Assistance Acknowledgment
+
+I used ChatGPT as a technical and documentation assistant during this lab.
+
+AI assistance included guidance with Raspberry Pi setup, Python environment configuration, sensor and servo testing, troubleshooting, and development of the keyboard-controlled servo demonstration script.
+
+I also used ChatGPT to help organize and refine my written documentation and to guide creation of my visual references based on my five original dining concepts.
+
+The concept selection, design decisions, cardboard prototype construction, hardware testing, servo calibration, demonstration recording, and final design sketches were completed by me. The Wizard-of-Oz demonstration and its simulated sensing behavior are explicitly identified in the documentation.
 
 ---
 
