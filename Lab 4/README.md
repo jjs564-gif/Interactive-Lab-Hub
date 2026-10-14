@@ -335,8 +335,6 @@ https://drive.google.com/file/d/12jNM7uuJcP61YKrk7G9qeKD65bir73ut/view?usp=shari
 
 **WasteWise explanation:**
 
-### Prototype Implementation and Demonstration
-
 I created a cardboard thumbs-up cutout and attached it to the horn of a micro-servo motor connected to the SparkFun Pi Servo pHAT and Raspberry Pi 5.
 
 Using a Python script, I calibrated the servo to rotate between approximately **60° and 150°**. Pressing the spacebar activates the rotation, turning the cardboard thumbs-up into a thumbs-down.
