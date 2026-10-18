@@ -375,3 +375,248 @@ For submission, the readme.md page for this lab should be edited to include the 
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
 
 </details>
+
+# Part 2: WasteWise | Build & Integrate
+
+## Part E: Sensing + Actuation
+
+### 1. Project Overview
+
+**WasteWise** is a physical feedback prototype designed to encourage awareness of leftover food. The concept uses a proximity sensor to detect an object in a dining area and a servo-driven cardboard hand to communicate a positive or negative response.
+
+For Lab 4a, I built a low-fidelity cardboard prototype and used a Wizard-of-Oz interaction in which pressing the spacebar manually controlled the servo. For Lab 4b, I connected the proximity sensor directly to the servo in Python, replacing the simulated input with automatic sensing.
+
+The completed prototype demonstrates a simple interaction:
+
+**Object detected → sensor reading crosses threshold → cardboard thumb rotates downward**
+
+**Object removed → sensor reading returns below threshold → cardboard thumb rotates upward**
+
+The current implementation detects proximity, not food type, food quantity, or actual waste. It is intended as a proof of concept for physical feedback during a dining interaction.
+
+---
+
+### 2. Physical Prototype: Looks Like
+
+The prototype uses a Raspberry Pi, SparkFun Pi Servo pHAT, SparkFun Qwiic VCNL4040 proximity sensor, and a small servo motor with a hand-cut cardboard thumb attached.
+
+I kept the cardboard hand from Lab 4a and adjusted its resting angle so the available servo rotation produces a recognizable change between positive and negative feedback.
+
+For the final demonstration, I used the original Raspberry Pi packaging box as a sliding support for the sensor. This helped keep the sensor at a more consistent height while moving it across the table. A wall charger represented an object or leftover food in the detection area.
+
+**Sliding sensor setup**
+
+![WasteWise sliding sensor setup](media/wastewise_lab4b/WasteWise_Lab4b_Sliding_Sensor_Setup.jpg)
+
+**Cardboard thumb actuator**
+
+![WasteWise cardboard thumb actuator](media/wastewise_lab4b/WasteWise_Lab4b_Cardboard_Thumb_Actuator.jpg)
+
+This is still a low-fidelity physical prototype rather than a finished product enclosure. The main goal was to test the relationship between sensor placement, object detection, and visible movement.
+
+---
+
+### 3. System Implementation: Works Like
+
+#### Hardware
+
+| Component | Purpose |
+|---|---|
+| Raspberry Pi | Runs the sensing and actuation code |
+| SparkFun Qwiic VCNL4040 | Measures reflected infrared proximity |
+| SparkFun Pi Servo pHAT | Controls the servo over I²C |
+| Servo motor, Channel 0 | Rotates the cardboard hand |
+| Cardboard hand | Provides visible positive/negative feedback |
+| Raspberry Pi packaging box | Supports the sensor during the sliding demonstration |
+| Wall charger | Acts as a physical stand-in for food |
+
+The proximity sensor connects to the Servo pHAT through the Qwiic interface. The servo connects to Channel 0 of the pHAT, which has its own power connection.
+
+I verified that both devices were detected on the Raspberry Pi's I²C bus and tested the proximity sensor independently before integrating the two components.
+
+#### Software
+
+The integrated implementation is available here:
+
+**[View `wastewise_integrated.py`](wastewise_integrated.py)**
+
+The original Wizard-of-Oz implementation is preserved here:
+
+**[View `wastewise_demo.py`](wastewise_demo.py)**
+
+The integrated Python script:
+
+1. Initializes the proximity sensor and servo controller.
+2. Continuously reads proximity values.
+3. Compares readings against calibrated detection and clearing thresholds.
+4. Moves the servo smoothly when the detected state changes.
+5. Maintains the current position until the opposite threshold is crossed.
+
+This prevents the servo from repeatedly moving while the sensor remains in the same state.
+
+#### Interaction Diagram
+
+```text
+Object enters sensing area
+            |
+            v
+  VCNL4040 proximity sensor
+            |
+            v
+      Raspberry Pi
+   Read proximity value
+            |
+            v
+  Compare against thresholds
+            |
+      +-----+-----+
+      |           |
+  >= 200       <= 180
+      |           |
+      v           v
+  Detect       Clear
+   object      object
+      |           |
+      v           v
+  Servo pHAT controls
+    servo on Channel 0
+      |           |
+      v           v
+  150 degrees  60 degrees
+      |           |
+      v           v
+  Negative     Positive
+   feedback     feedback
+```
+
+The two different thresholds create a small buffer, or *hysteresis*, so the actuator does not constantly switch states when readings fluctuate near the boundary.
+
+---
+
+### 4. Testing and Calibration
+
+I first tested the VCNL4040 separately using the provided `qwiic_distance.py` example. Its readings changed as I moved an object closer to and farther from the sensor, confirming that it could detect proximity changes.
+
+Next, I combined the sensor with the working servo code. The first integrated demonstration used a hand moving into and out of the sensor's range. The cardboard hand successfully changed positions automatically, without a keyboard trigger.
+
+**Sensor-to-servo integration video**
+
+[Watch WasteWise Sensor + Servo Integration](media/wastewise_lab4b/WasteWise_Lab4b_Sensor_Servo_Integration.mp4)
+
+#### Final Physical Arrangement
+
+For the dining-context demonstration, I positioned the proximity sensor on the Raspberry Pi packaging box and slid the assembly across the tabletop. I used a wall charger as a stand-in for food, allowing me to test the interaction with a consistent physical object.
+
+During calibration, I observed readings around 180–200 in the normal sliding region, with higher readings as the sensor passed over the object. In one exploratory test, readings increased dramatically when the object was very close to the sensor.
+
+After several adjustments, I selected the following settings:
+
+| Parameter | Final setting |
+|---|---|
+| Approximate baseline | 180 |
+| Object detection threshold | 200 or higher |
+| Object clearing threshold | 180 or lower |
+| Positive-feedback servo position | 60° |
+| Negative-feedback servo position | 150° |
+| Servo movement increment | 2° |
+| Delay between movement increments | 0.03 seconds |
+| Sensor polling interval | 0.2 seconds |
+
+The final settings were selected through physical testing rather than assuming a fixed sensor-to-object distance.
+
+**Final WasteWise proxy demonstration**
+
+[Watch WasteWise Final Demonstration](media/wastewise_lab4b/WasteWise_Lab4b_Final_Proxy_Demonstration.mp4)
+
+In this demonstration, the sensor responds to the wall charger as it enters the sensing region, triggering the cardboard hand to rotate toward negative feedback. When the object is no longer detected, the hand returns toward positive feedback.
+
+Because the object is a wall charger rather than actual food, this test validates the sensing-to-actuation interaction, not the ability to identify or quantify leftover food.
+
+---
+
+### 5. User Interaction: Acts Like
+
+In the intended dining interaction, WasteWise would be positioned near a plate or food-return area. When leftover food enters the detection region, the system would provide an immediate physical response through the cardboard thumb.
+
+The user does not need to press a button or manually activate the feedback. The sensing and response occur automatically.
+
+The thumb is deliberately simple and expressive. Rather than displaying a numerical measurement, the prototype communicates its state through physical movement, making the feedback visible at a glance.
+
+The current demonstration simulates the object-detection stage of that experience. A more developed version would need a stable mount, calibration for actual plates and food, and a more reliable method of distinguishing leftovers from the plate or surrounding objects.
+
+---
+
+## Part F: Final Documentation and Reflection
+
+### 6. What I Learned
+
+**How does the chosen sensor shape the physical response?**
+
+The proximity sensor converts the presence of a nearby object into a numerical reading. I used that reading to determine when the servo should change positions. This creates a direct connection between sensing and physical movement, but it also means the interaction depends heavily on sensor placement and threshold selection.
+
+**How does the physical arrangement change the interaction?**
+
+The sensor's position and height made a noticeable difference in its readings. Holding the sensor by hand introduced variation, so I used the Raspberry Pi packaging box as a sliding support. This made the demonstration more repeatable and showed me that the physical arrangement is part of the sensing system, not just a way to hold the hardware.
+
+**What thresholds, timing, or movement patterns made the interaction clearer?**
+
+My initial integration used detection and clearing thresholds of 60 and 30, which worked when moving my hand toward the sensor. Those settings were not appropriate for the final tabletop arrangement because its baseline readings were much higher.
+
+I experimented with different thresholds before settling on 200 for detection and 180 for clearing. Using separate thresholds helped prevent repeated switching near the boundary.
+
+I also retained gradual servo movement in 2° increments rather than making the cardboard hand jump instantly between positions. This made the physical feedback easier to follow.
+
+**What changed when I adjusted the sensor placement or servo motion?**
+
+Changing the sensor's height and position affected the proximity values significantly, which required recalibration.
+
+The servo also had a practical movement limitation. When I attempted a larger commanded rotation, the mechanism began slipping or reaching its effective travel limit. Instead of forcing a full 180° motion, I returned to the tested 60°–150° settings and repositioned the cardboard hand so the available movement still conveyed a transition between positive and negative feedback.
+
+This was an important lesson in designing around the capabilities of the actual hardware.
+
+**What was fun, surprising, or challenging?**
+
+The most satisfying part was moving beyond the Wizard-of-Oz prototype. In Lab 4a, I controlled the servo manually to simulate sensing. In Lab 4b, I was able to remove that manual trigger and watch the cardboard hand respond directly to a physical object.
+
+The most surprising part was how much the sensor readings changed with the physical setup. The same sensor required different thresholds when I moved from hand-based testing to the tabletop demonstration.
+
+The main challenges were establishing reliable I²C communication, calibrating the sensor thresholds, and working within the servo's mechanical limits. Each issue required testing the hardware directly rather than relying on the code alone.
+
+---
+
+### 7. Iteration and Future Improvements
+
+This prototype successfully demonstrates the core sensing-to-actuation interaction, but several improvements would be needed before WasteWise could function as a practical food-waste feedback device.
+
+- **Stable mounting:** Build a dedicated structure that holds the sensor at a consistent height above a plate or food-return area.
+- **Food-specific sensing:** Test real food and plate materials to understand how reliably the proximity sensor can distinguish them.
+- **More reliable detection:** Explore multiple readings, averaging, or additional sensing methods to reduce false triggers.
+- **Mechanical refinement:** Improve the servo mounting and cardboard-hand attachment so the feedback is more consistent and visually expressive.
+- **User experience:** Evaluate whether the positive/negative thumb gesture is understandable, helpful, and appropriate in a dining setting.
+
+A proximity sensor alone cannot determine whether an object is food or measure the amount of food waste accurately. These limitations would need to be addressed in a future iteration.
+
+---
+
+### 8. Final Deliverables
+
+| Prototype requirement | Evidence |
+|---|---|
+| **Looks Like** | Cardboard hand and physical sensor arrangement shown in the setup photographs |
+| **Works Like** | Integrated Python code and automatic sensor-to-servo demonstration |
+| **Acts Like** | Sliding-box demonstration showing how an object entering the sensing area triggers physical feedback |
+
+**Source code:** [`wastewise_integrated.py`](wastewise_integrated.py)
+
+**Media folder:** [`media/wastewise_lab4b/`](media/wastewise_lab4b/)
+
+**Working prototype videos:**
+
+- [Sensor + Servo Integration](media/wastewise_lab4b/WasteWise_Lab4b_Sensor_Servo_Integration.mp4)
+- [Final WasteWise Proxy Demonstration](media/wastewise_lab4b/WasteWise_Lab4b_Final_Proxy_Demonstration.mp4)
+
+---
+
+### 9. AI Assistance Acknowledgment
+
+I used ChatGPT to assist with Python code development and debugging, integrating the proximity sensor with the servo controller, organizing the README documentation, and refining written explanations for clarity. I physically assembled and tested the hardware, calibrated the thresholds and servo positions, developed the demonstration arrangement, and recorded the prototype's behavior. The documented results and limitations reflect my actual testing.
