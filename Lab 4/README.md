@@ -162,6 +162,9 @@ The concept selection, design decisions, cardboard prototype construction, hardw
 
 ---
 
+<details>
+<summary><strong>Original Lab 4 Part 2 Instructions (Reference)</strong></summary>
+
 ## Part 2
 
 Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design, reiterated below.
@@ -370,3 +373,5 @@ For submission, the readme.md page for this lab should be edited to include the 
 * Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
 * Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
+
+</details>
