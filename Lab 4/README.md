@@ -501,7 +501,7 @@ Next, I combined the sensor with the working servo code. The first integrated de
 
 **Sensor-to-servo integration video**
 
-[Watch WasteWise Sensor + Servo Integration](media/wastewise_lab4b/WasteWise_Lab4b_Sensor_Servo_Integration.mp4)
+[▶ Watch WasteWise Sensor + Servo Integration](https://drive.google.com/file/d/1JBsq2s2rKu3daiEcl63KQPL7mwMCYMQA/view?usp=sharing)
 
 #### Final Physical Arrangement
 
@@ -526,7 +526,7 @@ The final settings were selected through physical testing rather than assuming a
 
 **Final WasteWise proxy demonstration**
 
-[Watch WasteWise Final Demonstration](media/wastewise_lab4b/WasteWise_Lab4b_Final_Proxy_Demonstration.mp4)
+[▶ Watch WasteWise Final Proxy Demonstration](https://drive.google.com/file/d/1SIt6MwPu6vNU7oEGK583mtMcpYT8IZJW/view?usp=sharing)
 
 In this demonstration, the sensor responds to the wall charger as it enters the sensing region, triggering the cardboard hand to rotate toward negative feedback. When the object is no longer detected, the hand returns toward positive feedback.
 
@@ -610,10 +610,19 @@ A proximity sensor alone cannot determine whether an object is food or measure t
 
 **Media folder:** [`media/wastewise_lab4b/`](media/wastewise_lab4b/)
 
-**Working prototype videos:**
+### Video Demonstrations
 
-- [Sensor + Servo Integration](media/wastewise_lab4b/WasteWise_Lab4b_Sensor_Servo_Integration.mp4)
-- [Final WasteWise Proxy Demonstration](media/wastewise_lab4b/WasteWise_Lab4b_Final_Proxy_Demonstration.mp4)
+**1. Sensor + Servo Integration**
+
+[Watch Sensor + Servo Integration on Google Drive](https://drive.google.com/file/d/1JBsq2s2rKu3daiEcl63KQPL7mwMCYMQA/view?usp=sharing)
+
+Demonstrates the automatic connection between proximity sensing and servo-driven physical feedback.
+
+**2. Final WasteWise Proxy Demonstration**
+
+[Watch Final WasteWise Demonstration on Google Drive](https://drive.google.com/file/d/1SIt6MwPu6vNU7oEGK583mtMcpYT8IZJW/view?usp=sharing)
+
+Demonstrates the complete interaction using a sliding sensor support and a wall charger as a food proxy.
 
 ---
 
