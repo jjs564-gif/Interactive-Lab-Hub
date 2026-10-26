@@ -1,0 +1,15 @@
+00:41:46 1 person(s) at center/close
+00:41:51 nobody
+00:41:56 1 person(s) at right/close
+00:41:57 1 person(s) at center/close
+00:42:00 nobody
+00:42:06 1 person(s) at center/close
+00:42:09 nobody
+00:42:10 1 person(s) at center/close
+00:42:13 nobody
+00:42:14 1 person(s) at center/close
+00:42:17 nobody
+00:42:18 1 person(s) at center/close
+00:42:24 1 person(s) at right/close
+00:42:26 1 person(s) at center/close
+00:42:28 nobody

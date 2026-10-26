@@ -1,0 +1,6 @@
+00:35:24 1 person(s) at center/close
+00:35:36 1 person(s) at right/close
+00:35:37 1 person(s) at center/close
+00:35:41 1 person(s) at right/close
+00:35:42 2 person(s) at center/close, center/close
+00:35:43 1 person(s) at center/close
