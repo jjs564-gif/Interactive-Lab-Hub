@@ -59,11 +59,15 @@ The confidence threshold matters because a lower threshold can retain uncertain 
 
 ## Part C: Hand and pose tracking with MediaPipe
 
-The lab's `hand_pose.py` example uses MediaPipe hand landmarks to turn gestures into interaction controls. In particular, the provided demonstration maps thumb-to-index-finger distance to a continuous control and uses a hand gesture for an immediate action. Unlike YOLO's person-count and position interpretation, MediaPipe can represent fine-grained hand movements.
+I completed the provided `hand_pose.py` demonstration using the Raspberry Pi's desktop through RealVNC Connect and the Pi's WayVNC server. Running the program through a normal SSH session initially failed because OpenCV could not connect to a graphical display (`qt.qpa.xcb: could not connect to display`). Connecting through VNC resolved this, and the live webcam window displayed the MediaPipe hand skeleton and interactive percentage indicator.
 
-I confirmed that the MediaPipe dependency was available and reviewed its intended role. **I did not capture or document a successful live hand-pose demonstration**, so this section records the investigated interaction approach rather than presenting an unverified result.
+I tested the hand landmark tracking by raising my hand, spreading my fingers, and changing the distance between my thumb and index finger. The application tracked the 21 hand landmarks and displayed a changing percentage indicator. The demonstration also includes a gesture-based immediate control; the recorded evidence establishes the live hand tracking and percentage visualization, rather than a separately verified audio-mute outcome.
 
-For an overnight observant system, hand tracking could be useful during the deliberate bedtime handoff, such as recognizing a gesture to start monitoring. I would avoid relying on a gesture alone for a critical command without an acknowledgment or confirmation.
+**Part C demonstration:** [Watch the hand-pose interaction video](media/hand_pose/Lab5A_PartC_Hand_Pose_Demonstration.mp4)
+
+**Implementation:** [View `hand_pose.py`](hand_pose.py) · [View `loop_audio.sh`](loop_audio.sh)
+
+This shows how a set of landmark coordinates can become an interface: a continuous measurement such as fingertip distance can control a value, while a recognizable pose can trigger a discrete event. For an overnight observant system, I could use a deliberate hand gesture to begin monitoring at bedtime, with a visible acknowledgment to avoid accidental activation. A morning gesture could dismiss or replay the summary.
 
 ## Part D: Run Qwen locally with Ollama
 
@@ -90,7 +94,7 @@ The smaller model was approximately 2.8 times faster for this one text prompt, b
 
 ![Qwen reasoning test](media/qwen_tests/Lab5A_Qwen_Reasoning_Test.png)
 
-The terminal-based test outputs and timing observations are also documented in [Part D experiment notes](media/qwen_tests/qwen_part_d_results.md), if that file is included in the repository.
+The terminal-based tests and timing observations are also documented in [Part D experiment notes](media/qwen_tests/qwen_part_d_results.md).
 
 ## Part E: Connect YOLO observations to Qwen reasoning
 
@@ -155,7 +159,7 @@ For Lab 5b, I plan to use this insight to design an overnight interaction that t
 
 ## Files and reproducibility
 
-The supplied lab scripts are available in this `Lab 5` directory, including `snap.py`, `yolo_person.py`, `hand_pose.py`, `ask_qwen.py`, `yolo_to_qwen.py`, `overnight.py`, and `morning.py`. My supporting images and logs are organized under `media/`.
+The supplied lab scripts are available in this `Lab 5` directory. The files used or examined for Part 1 include [snap.py](snap.py), [yolo_person.py](yolo_person.py), [hand_pose.py](hand_pose.py), [loop_audio.sh](loop_audio.sh), [ask_qwen.py](ask_qwen.py), and [yolo_to_qwen.py](yolo_to_qwen.py). The starter scripts for Part 2, [overnight.py](overnight.py) and [morning.py](morning.py), are also present. Supporting evidence is organized in [YOLO tests](media/yolo_tests/), [Qwen tests](media/qwen_tests/), [YOLO-to-Qwen tests](media/yolo_qwen_tests/), and [hand-pose demonstration](media/hand_pose/).
 
 Representative commands used:
 
@@ -177,11 +181,15 @@ python ask_qwen.py --image snap.jpg "What is in this photo?"
 
 # Observe, log, and summarize camera detections
 python yolo_to_qwen.py --headless
+
+# Run the graphical hand-pose demonstration in the Pi desktop via VNC
+chmod +x loop_audio.sh
+python hand_pose.py
 ```
 
 ## Collaboration and AI acknowledgment
 
-This lab was completed individually. I used ChatGPT to help interpret terminal output, troubleshoot setup and file handling, organize experiment evidence, and edit the documentation. I executed the commands, captured the webcam tests, and reviewed the actual observations and model responses. AI-generated interpretations were checked against the saved logs rather than accepted as factual evidence.
+This lab was completed individually. I used ChatGPT to help interpret terminal output, troubleshoot setup, VNC access, video conversion and file handling, organize experiment evidence, and edit the documentation. I executed the commands, captured the webcam tests, and reviewed the actual observations and model responses. AI-generated interpretations were checked against the saved logs rather than accepted as factual evidence.
 
 ---
 
