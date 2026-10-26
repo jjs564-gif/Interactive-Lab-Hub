@@ -1,3 +1,6 @@
+<details>
+<summary><strong>Original Lab 5 Part 1 instructions (click to expand)</strong></summary>
+
 # Observant Systems: Overnight Sensation
 
 **Team:**
@@ -258,6 +261,7 @@ asking Qwen...
 Qwen (18.4 s):
 One person came in from the right, moved close to the camera, and left after about half a minute. ...
 ```
+</details>
 
 ---
 
