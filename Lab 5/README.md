@@ -188,15 +188,6 @@ This lab was completed individually. I used ChatGPT to help interpret terminal o
 <details>
 <summary><strong>Original Lab 5 Part 1 instructions (click to expand)</strong></summary>
 
-> Preserve the original course instructions for Parts A–E here, unchanged, before the closing `</details>` tag. This placeholder is not part of the final submission.
-
-</details>
-
----
-
-<details>
-<summary><strong>Original Lab 5 Part 1 instructions (click to expand)</strong></summary>
-
 # Observant Systems: Overnight Sensation
 
 **Team:**
