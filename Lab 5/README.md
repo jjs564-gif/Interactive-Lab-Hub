@@ -41,13 +41,13 @@ I downloaded the YOLO26n weights and exported them to the NCNN format for effici
 
 **YOLO on the sample bus image**
 
-![YOLO bus detection](media/yolo_tests/bus_detection.jpg)
+![YOLO bus detection](media/hand_pose/yolo_tests/bus_detection.jpg)
 
 **Webcam image and person detection**
 
 | Original camera capture | YOLO detection |
 | --- | --- |
-| ![Original webcam image](media/yolo_tests/webcam_original.jpg) | ![Webcam person detection](media/yolo_tests/webcam_detection.jpg) |
+| ![Original webcam image](media/hand_pose/yolo_tests/webcam_original.jpg) | ![Webcam person detection](media/hand_pose/yolo_tests/webcam_detection.jpg) |
 
 The detector reported approximately 65 ms inference time for the webcam still image. This is a single-image measurement, not a sustained real-time frame-rate benchmark.
 
@@ -90,11 +90,11 @@ The smaller model was approximately 2.8 times faster for this one text prompt, b
 
 ### Qwen evidence
 
-![Ollama models installed](media/qwen_tests/Lab5A_Ollama_Model_Installation.png)
+![Ollama models installed](media/hand_pose/qwen_tests/Lab5A_Ollama_Model_Installation.png)
 
-![Qwen reasoning test](media/qwen_tests/Lab5A_Qwen_Reasoning_Test.png)
+![Qwen reasoning test](media/hand_pose/qwen_tests/Lab5A_Qwen_Reasoning_Test.png)
 
-The terminal-based tests and timing observations are also documented in [Part D experiment notes](media/qwen_tests/qwen_part_d_results.md).
+The terminal-based tests and timing observations are also documented in [Part D experiment notes](media/hand_pose/qwen_tests/qwen_part_d_results.md).
 
 ## Part E: Connect YOLO observations to Qwen reasoning
 
@@ -142,8 +142,8 @@ The second run produced more informative **sensor evidence**, even though its Qw
 
 **Saved observation logs:**
 
-- [Run 1 log](media/yolo_qwen_tests/Lab5A_YOLO_Qwen_Observation_Log.txt)
-- [Run 2 log](media/yolo_qwen_tests/Lab5A_YOLO_Qwen_Run2_Log.txt)
+- [Run 1 log](media/hand_pose/yolo_qwen_tests/Lab5A_YOLO_Qwen_Observation_Log.txt)
+- [Run 2 log](media/hand_pose/yolo_qwen_tests/Lab5A_YOLO_Qwen_Run2_Log.txt)
 
 ### What I learned
 
@@ -159,7 +159,7 @@ For Lab 5b, I plan to use this insight to design an overnight interaction that t
 
 ## Files and reproducibility
 
-The supplied lab scripts are available in this `Lab 5` directory. The files used or examined for Part 1 include [snap.py](snap.py), [yolo_person.py](yolo_person.py), [hand_pose.py](hand_pose.py), [loop_audio.sh](loop_audio.sh), [ask_qwen.py](ask_qwen.py), and [yolo_to_qwen.py](yolo_to_qwen.py). The starter scripts for Part 2, [overnight.py](overnight.py) and [morning.py](morning.py), are also present. Supporting evidence is organized in [YOLO tests](media/yolo_tests/), [Qwen tests](media/qwen_tests/), [YOLO-to-Qwen tests](media/yolo_qwen_tests/), and [hand-pose demonstration](media/hand_pose/).
+The supplied lab scripts are available in this `Lab 5` directory. The files used or examined for Part 1 include [snap.py](snap.py), [yolo_person.py](yolo_person.py), [hand_pose.py](hand_pose.py), [loop_audio.sh](loop_audio.sh), [ask_qwen.py](ask_qwen.py), and [yolo_to_qwen.py](yolo_to_qwen.py). The starter scripts for Part 2, [overnight.py](overnight.py) and [morning.py](morning.py), are also present. Supporting evidence is organized in [YOLO tests](media/hand_pose/yolo_tests/), [Qwen tests](media/hand_pose/qwen_tests/), [YOLO-to-Qwen tests](media/hand_pose/yolo_qwen_tests/), and [hand-pose demonstration](media/hand_pose/).
 
 Representative commands used:
 
