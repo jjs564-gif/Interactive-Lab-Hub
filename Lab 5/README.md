@@ -1,3 +1,199 @@
+# Lab 5 Part 1: Observant Systems | On-Device AI
+
+**Course:** ECE 5413 Developing and Designing Interactive Devices  
+**Project:** Lab 5, Part 1 (Lab 5a)  
+**Platform:** Raspberry Pi 5, USB webcam, Python, YOLO26n, Ollama and Qwen  
+**Team:** Individual work  
+**Author:** Jonathan Sharpy (GitHub: `jjs564-gif`)
+
+## Overview
+
+In this lab, I explored how a Raspberry Pi can observe its environment and convert camera data into meaningful descriptions without relying on cloud inference. I tested object detection with YOLO, investigated hand and pose interaction through the supplied MediaPipe example, ran small Qwen language models locally with Ollama, and connected object detection to language-model reasoning.
+
+The central lesson was that **detecting an event and explaining it are different tasks**. YOLO could identify people and record changes in their position or presence, but Qwen sometimes produced confident summaries that were inconsistent with the observation log. This matters for Part 2, where the system must describe overnight events reliably.
+
+## Hardware and software
+
+| Component | Role |
+| --- | --- |
+| Raspberry Pi 5 | Runs inference and stores observations locally |
+| USB Full HD webcam | Supplies live camera frames |
+| Python 3.11 virtual environment | Isolates the lab dependencies |
+| Ultralytics YOLO26n, exported to NCNN | Detects objects efficiently on the Pi CPU |
+| OpenCV | Camera capture and image handling |
+| MediaPipe | Hand and body landmark tracking in the provided Part C demo |
+| Ollama | Runs Qwen models locally |
+| Qwen3.5 0.8B | Text and image interpretation |
+| Qwen3 0.6B | Faster, text-only comparison model |
+
+All work was performed in `Lab 5` within my `Interactive-Lab-Hub` repository. The webcam was connected to the **Raspberry Pi**, not used through the Mac's built-in camera.
+
+## Part A: Set up on-device AI
+
+I created a Python virtual environment, installed the lab dependencies, and verified that the Ultralytics, OpenCV, and MediaPipe packages could be imported. An initial Ultralytics logging message produced a `UnicodeEncodeError` because the terminal was using a Latin-1 locale. The import test nevertheless completed successfully; this was an output-encoding issue rather than a failed installation.
+
+I downloaded the YOLO26n weights and exported them to the NCNN format for efficient CPU inference on the Raspberry Pi. The export completed successfully and produced `yolo26n_ncnn_model` (approximately 9.4 MB). I then tested the model on Ultralytics' sample bus image and on a photograph captured using the USB webcam.
+
+**YOLO sample-image result:** four people and one bus were detected.  
+**Webcam result:** one person was detected in a 640 × 640 image. A reviewed detection image showed a bounding box labeled `person 0.90`.
+
+### Image evidence
+
+**YOLO on the sample bus image**
+
+![YOLO bus detection](media/yolo_tests/bus_detection.jpg)
+
+**Webcam image and person detection**
+
+| Original camera capture | YOLO detection |
+| --- | --- |
+| ![Original webcam image](media/yolo_tests/webcam_original.jpg) | ![Webcam person detection](media/yolo_tests/webcam_detection.jpg) |
+
+The detector reported approximately 65 ms inference time for the webcam still image. This is a single-image measurement, not a sustained real-time frame-rate benchmark.
+
+## Part B: Recognize people with YOLO
+
+I used the supplied YOLO tools to detect people in a webcam image and reviewed the resulting bounding box and confidence. I also examined the available real-time person detector and its confidence and headless options. The saved image demonstrates successful person recognition; I have not included evidence of a separate live `yolo_person.py` VNC session, so I do not claim that interactive demo was completed.
+
+The confidence threshold matters because a lower threshold can retain uncertain detections, while a higher threshold may omit partially visible people. This tradeoff is especially important in a monitoring application: one missed frame should not automatically be treated as a confirmed departure.
+
+## Part C: Hand and pose tracking with MediaPipe
+
+The lab's `hand_pose.py` example uses MediaPipe hand landmarks to turn gestures into interaction controls. In particular, the provided demonstration maps thumb-to-index-finger distance to a continuous control and uses a hand gesture for an immediate action. Unlike YOLO's person-count and position interpretation, MediaPipe can represent fine-grained hand movements.
+
+I confirmed that the MediaPipe dependency was available and reviewed its intended role. **I did not capture or document a successful live hand-pose demonstration**, so this section records the investigated interaction approach rather than presenting an unverified result.
+
+For an overnight observant system, hand tracking could be useful during the deliberate bedtime handoff, such as recognizing a gesture to start monitoring. I would avoid relying on a gesture alone for a critical command without an acknowledgment or confirmation.
+
+## Part D: Run Qwen locally with Ollama
+
+I installed Ollama and downloaded two models:
+
+- `qwen3.5:0.8b` (approximately 1.3 GB), supporting text and image input.
+- `qwen3:0.6b` (approximately 522 MB), a smaller text-only model.
+
+The `ollama list` output confirmed both models were installed. I ran the larger model interactively with `/set nothink`, then used `ask_qwen.py` to compare the models on the same prompt and to test image understanding.
+
+### Experimental results
+
+| Test | Model | Time | Observation |
+| --- | --- | ---: | --- |
+| History of Roosevelt Island | Qwen3.5 0.8B | 16.4 s | Generated a plausible but historically inaccurate explanation |
+| Same history prompt | Qwen3 0.6B | 5.8 s | Responded faster but also included inaccurate historical claims |
+| Describe `snap.jpg` | Qwen3.5 0.8B | 33.8 s | Described the visible person and window blinds broadly correctly |
+
+The smaller model was approximately 2.8 times faster for this one text prompt, but the comparison is not a general benchmark. Both models demonstrated that fluent output is not necessarily accurate. The image-capable model could interpret a photo but required substantially longer than the text-only queries.
+
+### Qwen evidence
+
+![Ollama models installed](media/qwen_tests/Lab5A_Ollama_Model_Installation.png)
+
+![Qwen reasoning test](media/qwen_tests/Lab5A_Qwen_Reasoning_Test.png)
+
+The terminal-based test outputs and timing observations are also documented in [Part D experiment notes](media/qwen_tests/qwen_part_d_results.md), if that file is included in the repository.
+
+## Part E: Connect YOLO observations to Qwen reasoning
+
+I ran `yolo_to_qwen.py --headless` over SSH. The script used the USB webcam to detect people, converted detections into compact descriptions, logged changes to `watch_log.txt`, and asked Qwen to summarize the resulting observations. Headless mode was useful because the terminal session did not provide the graphical window required by the VNC version.
+
+### System pipeline
+
+```text
+USB webcam
+    |
+    v
+YOLO26n object detection
+    |
+    v
+Interpreter: person count + left/center/right + close/far
+    |
+    v
+Time-stamped observation log (watch_log.txt)
+    |
+    v
+Qwen reasoning from the text log
+    |
+    v
+Natural-language summary
+```
+
+This separation is central to the design. The detector finds visual objects, the interpreter chooses which facts to preserve, and the language model attempts to explain the sequence. The language model does not directly see the video in this pipeline.
+
+### Run 1: Movement while remaining in view
+
+I remained in the camera's field of view and made several movements. The script saved **six observations**, usually detecting one person at `center/close` or `right/close`. One observation reported two people, although I was the only intended participant, suggesting a possible false positive. Qwen responded in **8.8 seconds** but incorrectly stated that three people were present and that one remained stationary throughout the recording.
+
+### Run 2: Entering and leaving the camera view
+
+I repeated the test with deliberate changes in visibility. The system saved **15 observations**, alternating between `1 person` and `nobody`, and occasionally changing the detected position. Qwen responded in **24.6 seconds**, but claimed there were five people and that almost nothing changed. Those statements contradicted the log.
+
+| Observation | Run 1 | Run 2 |
+| --- | --- | --- |
+| Logged lines | 6 | 15 |
+| Detected behavior | Position changes, mostly one person | Repeated presence/absence and position changes |
+| Qwen response time | 8.8 s | 24.6 s |
+| Main limitation | Invented people and stationary behavior | Invented five people and overlooked repeated changes |
+
+The second run produced more informative **sensor evidence**, even though its Qwen summary was less reliable. These results should not be interpreted as a measurement of YOLO's overall accuracy because I did not record a synchronized ground-truth video for every detection.
+
+**Saved observation logs:**
+
+- [Run 1 log](media/yolo_qwen_tests/Lab5A_YOLO_Qwen_Observation_Log.txt)
+- [Run 2 log](media/yolo_qwen_tests/Lab5A_YOLO_Qwen_Run2_Log.txt)
+
+### What I learned
+
+The YOLO-to-Qwen pipeline worked end to end, but **the final summary cannot be treated as ground truth**. A reliable version should compute basic quantities such as maximum simultaneous person count and number of presence/absence transitions directly from the log. Qwen should then be instructed to summarize only those verified facts and to state uncertainty where observations are incomplete.
+
+The `center/close` and `right/close` labels also describe the position of a detected bounding box, not a confirmed identity or a precise physical location. The hand movements I made in Run 1 were not independently identified because this interpreter does not use hand landmarks.
+
+## Reflection and next steps
+
+The most successful part of Lab 5a was running a complete, local observation pipeline on the Raspberry Pi: camera capture, object detection, interpretation, event logging, and language-model output. The experiments also exposed a clear failure mode: Qwen sometimes inferred people or events that the detector never logged.
+
+For Lab 5b, I plan to use this insight to design an overnight interaction that treats recorded observations as evidence. The bedtime interaction should establish what to monitor, the overnight process should log meaningful events without needing constant attention, and the morning output should provide a short, factual summary. Privacy, camera placement, detection uncertainty, and the possibility of false alarms will be important design constraints.
+
+## Files and reproducibility
+
+The supplied lab scripts are available in this `Lab 5` directory, including `snap.py`, `yolo_person.py`, `hand_pose.py`, `ask_qwen.py`, `yolo_to_qwen.py`, `overnight.py`, and `morning.py`. My supporting images and logs are organized under `media/`.
+
+Representative commands used:
+
+```bash
+cd ~/Interactive-Lab-Hub/"Lab 5"
+source .venv/bin/activate
+
+# Capture and detect a person in a still image
+python snap.py --delay 3
+yolo predict model=yolo26n_ncnn_model source=snap.jpg project=runs
+
+# Inspect locally installed Qwen models
+ollama list
+
+# Compare text and image reasoning
+python ask_qwen.py "Tell me about the history of Roosevelt Island in three sentences."
+python ask_qwen.py --model qwen3:0.6b "Tell me about the history of Roosevelt Island in three sentences."
+python ask_qwen.py --image snap.jpg "What is in this photo?"
+
+# Observe, log, and summarize camera detections
+python yolo_to_qwen.py --headless
+```
+
+## Collaboration and AI acknowledgment
+
+This lab was completed individually. I used ChatGPT to help interpret terminal output, troubleshoot setup and file handling, organize experiment evidence, and edit the documentation. I executed the commands, captured the webcam tests, and reviewed the actual observations and model responses. AI-generated interpretations were checked against the saved logs rather than accepted as factual evidence.
+
+---
+
+<details>
+<summary><strong>Original Lab 5 Part 1 instructions (click to expand)</strong></summary>
+
+> Preserve the original course instructions for Parts A–E here, unchanged, before the closing `</details>` tag. This placeholder is not part of the final submission.
+
+</details>
+
+---
+
 <details>
 <summary><strong>Original Lab 5 Part 1 instructions (click to expand)</strong></summary>
 
