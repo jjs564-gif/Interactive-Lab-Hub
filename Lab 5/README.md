@@ -460,6 +460,14 @@ One person came in from the right, moved close to the camera, and left after abo
 
 ---
 
+
+<details>
+<summary><strong>Original Lab 5 Assignment Instructions (Click to Expand)</strong></summary>
+
+<br>
+
+---
+
 # Lab 5 Part 2: Overnight Sensation
 
 For Part 2, you will use the observant system from Part 1 to design a night-time interaction. On-device AI is slow, so let it work while you sleep. The person meets the device twice: **before bed**, when they hand the night over, and **when awake**, when the device gives something back. In between, the pipeline from Part E runs on its own.
@@ -556,4 +564,7 @@ For submission, the readme.md page for this lab should be edited to include the 
   - Remove all instructional text and example prompts from this file.
   - You may either delete these sections or use the toggle/hide feature in VS Code to collapse them for a cleaner look.
   - Your final submission should be neat, focused on your own work, and easy to read for grading.
+</details>
+
+
 </details>
