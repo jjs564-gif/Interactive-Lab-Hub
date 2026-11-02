@@ -1,0 +1,8 @@
+{
+  "detected_at": "2026-11-02T11:11:38-05:00",
+  "confirmed_at": "2026-11-02T11:11:44-05:00",
+  "baseline": 150.31,
+  "threshold_increase": 8.0,
+  "consecutive_samples": 3,
+  "photo": "daybreak_data/photos/first_sustained_daylight.jpg"
+}
