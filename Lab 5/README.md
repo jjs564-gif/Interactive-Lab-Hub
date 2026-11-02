@@ -461,8 +461,11 @@ One person came in from the right, moved close to the camera, and left after abo
 ---
 
 
+# README PASTE HERE
+
+
 <details>
-<summary><strong>Original Lab 5 Assignment Instructions (Click to Expand)</strong></summary>
+<summary><strong>Original Lab 5 Part 2 Instructions (Click to Expand)</strong></summary>
 
 <br>
 
