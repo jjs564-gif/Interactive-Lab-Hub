@@ -973,24 +973,6 @@ The demonstration link will be added here after recording.
 
 ---
 
-# Lab 5B Deliverables
-
-| Deliverable | Status |
-|---|---|
-| Initial storyboard | Complete |
-| Peer feedback | Complete |
-| Revised storyboard | Complete |
-| Bedtime interaction implementation | Complete |
-| Overnight sensing implementation | Complete |
-| Morning reporting implementation | Complete |
-| Controlled brightness test | Complete |
-| Sustained detection test | Complete |
-| Event and observation logs | Complete |
-| Captured test photograph | Complete |
-| Morning audio test | Complete |
-| Real overnight observation | Pending |
-| Final demonstration video | Pending |
-
 ## Source Code
 
 - [Bedtime Handoff](daybreak_start.py)
