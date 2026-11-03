@@ -463,543 +463,463 @@ One person came in from the right, moved close to the camera, and left after abo
 
 ---
 
-# Lab 5B: Daybreak | An Overnight Observer
+
+# Lab 5B: Daybreak | An Overnight Physical Interaction
 
 ## Project Overview
 
-**Daybreak** is a Raspberry Pi-based interactive device that observes changes in natural light throughout the night and presents a meaningful report the following morning.
+**Daybreak** is a Raspberry Pi-based interactive system designed around a simple daily transition: going to sleep and waking up to natural daylight.
 
-The concept explores how a device can interact with its environment independently while its user sleeps. Rather than requiring continuous attention or providing an immediate notification, Daybreak quietly records observations and saves its findings for a morning reveal.
+Rather than relying on a conventional alarm or asking the user to check the time, Daybreak observes the changing brightness outside a window and uses that information to create a meaningful morning interaction. The user initiates the experience at bedtime, leaves the Raspberry Pi operating independently overnight, and returns in the morning to hear a spoken report about when sustained daylight was first detected.
 
-The interaction is divided into three phases:
+The final prototype combines a USB camera, Raspberry Pi, speaker, Python software, and time-stamped observations. It also captures a photograph of the first confirmed daylight event, creating a visual record of what the system observed.
 
-1. **Bedtime:** The user positions the camera toward a window, starts Daybreak, and receives a spoken acknowledgment.
-2. **Overnight:** The camera periodically measures image brightness, compares readings against a baseline, and records timestamped observations.
-3. **Morning:** Daybreak presents a spoken summary of the first sustained brightness increase and provides an associated photograph.
-
-The current prototype uses average camera brightness as its primary sensor measurement. It detects sustained increases in observed brightness rather than directly measuring the astronomical time of sunrise.
-
-The camera faces the window instead of the user, making the interaction less intrusive and more privacy-conscious.
+The goal was not simply to detect a bright image. It was to explore how an interactive device could interpret a gradual environmental change, distinguish a sustained event from temporary fluctuations, and communicate that observation back to a person.
 
 ---
 
-# Part F: Storyboarding and Interaction Design
+## 1. Interaction Concept
 
-## F.1 Initial Concept
+Daybreak is organized around two complementary interactions.
 
-I wanted to design an overnight device that could observe something meaningful while I slept without requiring active interaction throughout the night.
+### Bedtime Handoff
 
-Daybreak focuses on the transition between darkness and daylight.
+At night, the user starts Daybreak and receives a verbal acknowledgment that the system is beginning its observation.
 
-The initial interaction was designed around a simple bedtime handoff, an independent observation period, and a morning reveal.
+The camera faces a window while the Raspberry Pi monitors brightness at regular intervals. Once the observation begins, the laptop is no longer needed for the ongoing sensing process.
 
-### Initial Storyboard
+### Morning Reveal
 
-![Initial Daybreak Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Initial_Storyboard.png)
+The next morning, the user reconnects to the Raspberry Pi and requests the morning report.
 
-[Open Initial Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Initial_Storyboard.png)
+Daybreak reads the stored overnight results and communicates:
 
-The initial storyboard establishes the intended experience from the user's perspective.
+- When sustained brightness was first detected
+- When that event was confirmed
+- How many observations were recorded
+- Where the associated photograph was saved
 
-## F.2 Peer Feedback
+The morning interaction turns a long, mostly invisible sensing process into a concise and understandable report.
 
-The storyboard was reviewed to identify opportunities for improving the interaction and technical implementation.
-
-The feedback raised several important considerations:
-
-- How would Daybreak distinguish a real daylight increase from changes caused by the camera's automatic exposure?
-- What numerical condition would count as a sunrise-like event?
-- How could the system provide meaningful evidence of the detected moment?
-- Could the experience remain quiet and unobtrusive during the night?
-
-These questions helped refine the technical definition of the sensing event and the information presented during the morning reveal.
-
-### Feedback Document
-
-[Read Daybreak Storyboard Feedback](media/daybreak/storyboard/Lab5B_Daybreak_Storyboard_Feedback.md)
-
-## F.3 Revised Storyboard
-
-![Revised Daybreak Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Revised_Storyboard.png)
-
-[Open Revised Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Revised_Storyboard.png)
-
-The revised design emphasizes three important changes.
-
-**A clear sensing condition:** Daybreak identifies a sustained increase in camera brightness rather than treating any single bright frame as sunrise.
-
-**A saved visual observation:** The system captures a photograph associated with the detected event, allowing the user to inspect the evidence.
-
-**A quiet nighttime experience:** The device acknowledges the bedtime handoff verbally but reserves its main report for the following morning.
-
-This revision makes the interaction more deliberate and provides a clearer connection between what the device senses and what it communicates.
-
----
-
-# Part G: Bedtime Interaction
-
-## G.1 Interaction Design
-
-The bedtime interaction is intentionally minimal.
-
-The user positions the Raspberry Pi camera toward a window and starts the Daybreak observation program.
-
-Daybreak then provides a short verbal acknowledgment confirming that it has begun observing.
-
-The user does not need to interact with the device again until morning.
-
-### Interaction Sequence
+### Interaction Flow
 
 ```text
-User prepares for bed
-        |
-        v
-Positions camera toward window
-        |
-        v
-Starts Daybreak
-        |
-        v
-Daybreak acknowledges verbally
-        |
-        v
-Overnight observation begins
+USER
+  |
+  | Starts Daybreak at bedtime
+  v
+RASPBERRY PI + SPEAKER
+  |
+  | Verbal acknowledgment
+  | "Daybreak is now observing"
+  v
+WINDOW-FACING CAMERA
+  |
+  | Captures images periodically
+  | Measures image brightness
+  v
+DAYLIGHT DETECTION
+  |
+  | Establishes nighttime baseline
+  | Checks for brightness increase
+  | Requires consecutive qualifying samples
+  v
+EVENT RECORDING
+  |
+  | Saves detection and confirmation times
+  | Captures daylight photograph
+  | Preserves observation log
+  v
+MORNING REVEAL
+  |
+  | User requests report
+  v
+SPOKEN SUMMARY + CAPTURED IMAGE
 ```
 
-The spoken acknowledgment provides confirmation without requiring the user to inspect the terminal.
+---
 
-## G.2 Implementation
+## 2. Physical Prototype | Looks Like
 
-The bedtime interaction is implemented in:
+The final physical setup used a Raspberry Pi with a camera pointed toward a window and a connected speaker for verbal feedback.
+
+I positioned the camera to observe the outdoor environment through the same window used during calibration and controlled testing. I also kept the laptop closed during the independent overnight observation to demonstrate that the sensing process did not require an active laptop connection.
+
+### Final Overnight Hardware Setup
+
+![Daybreak overnight hardware setup](media/daybreak/photos/Lab5B_Daybreak_Overnight_Hardware_Setup.jpeg)
+
+*Figure 1. The overnight arrangement showing the Raspberry Pi, window-facing camera, speaker, and closed laptop.*
+
+### First Sustained Daylight Capture
+
+![First sustained daylight captured by Daybreak](media/daybreak/photos/Lab5B_Daybreak_Overnight_Daylight_Capture.jpg)
+
+*Figure 2. The photograph captured during the real overnight observation. The blue morning sky is visible through the window, with darker trees and foreground objects remaining in silhouette.*
+
+This photograph is especially meaningful because it represents the environmental event that the device was designed to identify. The image shows an early-morning lighting condition rather than full daylight, which is consistent with the intended behavior of detecting the transition from darkness toward morning.
+
+### Earlier Controlled Capture
+
+![Controlled daylight capture](media/daybreak/photos/Lab5B_Daybreak_Controlled_Daylight_Capture.jpg)
+
+*Figure 3. An earlier controlled test used to validate image capture and the event-recording workflow before the real overnight run.*
+
+---
+
+## 3. Hardware and Software | Works Like
+
+### Hardware
+
+| Component | Purpose |
+|---|---|
+| Raspberry Pi | Runs the sensing and interaction software independently |
+| USB camera | Observes the window and captures images |
+| Speaker | Provides spoken bedtime and morning feedback |
+| Audio input | Connected to the Raspberry Pi as an available interaction capability |
+| Window-facing placement | Provides access to changing outdoor light |
+| Power supply | Keeps the Raspberry Pi operating without the laptop |
+
+Although an audio input was connected, the demonstrated Daybreak interaction used the camera as its primary sensor and the speaker as its primary feedback device.
+
+### Software
+
+The system was developed in Python, with OpenCV used to access the camera and process images.
+
+The implementation is separated into three main scripts:
+
+**1. Bedtime entry point**
 
 [View daybreak_start.py](daybreak_start.py)
 
-The program starts the overnight observation using configurable parameters.
+Starts the bedtime handoff, acknowledges the beginning of the observation, and launches the overnight monitoring process.
 
-Example controlled-test command:
-
-```bash
-python daybreak_start.py \
-  --interval 5 \
-  --threshold 8 \
-  --consecutive 3 \
-  --duration 30
-```
-
-The parameters determine how frequently the camera is sampled, how large a brightness increase must be, how many consecutive readings must qualify, and how long the observation runs.
-
-## G.3 Bedtime Handoff Test
-
-The bedtime handoff was successfully tested.
-
-The terminal reported:
-
-```text
-DAYBREAK | BEDTIME HANDOFF
-Camera: window-facing
-Beginning overnight observation.
-Handoff complete. Daybreak is now observing.
-```
-
-The connected speaker also produced the verbal acknowledgment.
-
-After the handoff, the camera began collecting brightness measurements.
-
-### Test Evidence
-
-![Daybreak Bedtime Handoff](media/daybreak/screenshots/Lab5B_Daybreak_Bedtime_Handoff_Test.png)
-
----
-
-# Part H: Overnight Observation
-
-## H.1 System Overview
-
-Daybreak uses a Raspberry Pi, a camera, and a speaker.
-
-| Component | Function |
-|---|---|
-| Raspberry Pi | Executes the observation and reporting programs |
-| USB camera | Captures the window-facing scene |
-| OpenCV | Processes frames and calculates brightness |
-| JSONL log | Stores timestamped observations |
-| JSON event record | Stores the detected event and its parameters |
-| Speaker | Provides spoken bedtime and morning feedback |
-
-The Raspberry Pi also has audio-input capability, but the current Daybreak sensing pipeline relies on camera brightness rather than microphone input.
-
-## H.2 Sensing and Processing Pipeline
-
-```text
-Window-facing camera
-        |
-        v
-Capture frame
-        |
-        v
-Convert image to grayscale
-        |
-        v
-Calculate mean brightness
-        |
-        v
-Compare against initial baseline
-        |
-        v
-Check brightness threshold
-        |
-        v
-Require consecutive qualifying readings
-        |
-        v
-Save event and photograph
-        |
-        v
-Generate morning report
-```
-
-The system periodically captures a camera frame and converts it to grayscale.
-
-The average grayscale intensity is used as a numerical estimate of the observed scene brightness.
-
-Daybreak establishes an initial baseline and compares subsequent observations against it.
-
-A qualifying event requires multiple consecutive readings above the configured threshold.
-
-This approach reduces the likelihood of triggering on a single unusual frame.
-
-## H.3 Implementation
-
-The overnight observation program is implemented in:
+**2. Overnight observation**
 
 [View daybreak_overnight.py](daybreak_overnight.py)
 
-The script supports configurable sampling intervals, brightness thresholds, consecutive-sample requirements, and observation durations.
+Captures camera frames at a specified interval, calculates image brightness, establishes a nighttime baseline, checks for sustained brightness increases, and saves observation results.
 
-The system records its measurements in a timestamped log.
-
-When sustained brightness is detected, it also saves an event record and a photograph.
-
-## H.4 Initial Camera Test
-
-Before implementing the complete observation, I verified that the Raspberry Pi could access the camera and capture an image.
-
-The OpenCV test confirmed:
-
-```text
-OpenCV: 4.11.0
-Camera opened: True
-Frame captured: True
-Resolution: (480, 640, 3)
-Average brightness: 186.21
-```
-
-This established that the camera could provide the image data required for brightness-based sensing.
-
-### Initial Brightness Test
-
-![Initial Brightness Test](media/daybreak/screenshots/Lab5B_Daybreak_Initial_Brightness_Test.png)
-
-## H.5 Controlled Daylight Simulation
-
-Before performing a real overnight run, I tested Daybreak by positioning the camera toward a window and gradually opening the curtain.
-
-This created a controlled change in the amount of light visible to the camera.
-
-The test allowed me to evaluate the sensing logic without waiting for a natural sunrise.
-
-### First Test
-
-The initial configuration used a brightness threshold increase of 20 grayscale levels.
-
-Although the camera recorded changes in brightness, the system did not identify a sustained qualifying event.
-
-This showed that the original threshold was too restrictive for the observed conditions.
-
-### Second Test
-
-I reduced the brightness threshold increase to 8 grayscale levels while retaining the requirement for three consecutive qualifying samples.
-
-The test configuration was:
-
-| Parameter | Value |
-|---|---|
-| Sampling interval | 3 seconds |
-| Threshold increase | 8 grayscale levels |
-| Consecutive samples | 3 |
-| Observation duration | 60 seconds |
-
-This configuration successfully triggered a sustained-brightness detection.
-
-## H.6 Controlled-Test Results
-
-The successful test established a baseline brightness of **150.31**.
-
-The terminal then recorded the following qualifying observations:
-
-```text
-2026-11-02T11:11:38-05:00
-brightness=160.4
-streak=1
-detected=False
-
-2026-11-02T11:11:41-05:00
-brightness=160.4
-streak=2
-detected=False
-
-Sustained daylight detected:
-2026-11-02T11:11:38-05:00
-
-2026-11-02T11:11:44-05:00
-brightness=160.8
-streak=3
-detected=True
-```
-
-The system identified the first qualifying reading at **11:11:38 AM** and confirmed the sustained event at **11:11:44 AM**.
-
-The event was recorded after three consecutive readings satisfied the threshold condition.
-
-The program also saved a photograph associated with the detection.
-
-This demonstrated that the complete sensing pipeline could recognize and record a controlled daylight-like event.
-
-Importantly, this was a simulated daylight event rather than an actual sunrise.
-
-### Sustained Daylight Detection
-
-![Sustained Daylight Detection Test](media/daybreak/screenshots/Lab5B_Daybreak_Sustained_Daylight_Detection_Test.png)
-
-### Captured Photograph
-
-![Controlled Daylight Capture](media/daybreak/photos/Lab5B_Daybreak_Controlled_Daylight_Capture.jpg)
-
-### Observation Data
-
-[View Controlled-Test Log](media/daybreak/logs/Lab5B_Daybreak_Controlled_Test_Log.jsonl)
-
-[View Controlled-Test Event Record](media/daybreak/logs/Lab5B_Daybreak_Controlled_Test_Event.json)
-
-The event record contains the initial detection time, confirmation time, baseline, configured threshold, consecutive-sample requirement, and photograph path.
-
-## H.7 Challenges and Sensor Limitations
-
-The primary challenge was the camera's automatic exposure adjustment.
-
-A camera can compensate for changes in environmental illumination by adjusting its exposure settings.
-
-Consequently, a change in average image brightness does not necessarily correspond directly to the actual change in outdoor light intensity.
-
-During testing, some brightness measurements fluctuated even when the physical environment appeared relatively stable.
-
-The initial baseline also depended on the conditions present during startup.
-
-This made threshold selection important.
-
-The first controlled test did not cross the configured threshold, while the second test successfully detected a sustained brightness increase after reducing that threshold.
-
-For this reason, Daybreak is more accurately described as a sustained camera-brightness detector than a precise sunrise detector.
-
-## H.8 Real Overnight Observation
-
-**Status: Pending final overnight observation.**
-
-The next test will leave Daybreak observing the window throughout the night.
-
-The system will record periodic brightness measurements and attempt to identify the first sustained increase in observed brightness.
-
-The overnight log will be evaluated the following morning.
-
-If the system does not detect a qualifying event, that result will be documented rather than reporting an unsupported sunrise time.
-
-The real overnight observation will help evaluate whether the controlled-test threshold is suitable for natural lighting conditions.
-
-**The final overnight results and associated observations will be added here after testing.**
-
----
-
-# Part I: Morning Reveal
-
-## I.1 Interaction Design
-
-The morning reveal transforms Daybreak's recorded observations into a short, understandable summary.
-
-Instead of presenting the user with raw camera measurements, the system reports the relevant event information.
-
-The report includes:
-
-- The first detected sustained-brightness time
-- The confirmation time
-- The number of recorded observations
-- The location of the captured photograph
-
-The morning report can be displayed in the terminal and spoken aloud through the Raspberry Pi's speaker.
-
-## I.2 Implementation
-
-The morning interaction is implemented in:
+**3. Morning report**
 
 [View daybreak_morning.py](daybreak_morning.py)
 
-To generate the spoken morning report:
+Reads the saved event information and presents the morning report, with an option for spoken output.
 
-```bash
-python daybreak_morning.py --speak
-```
+### Detection Method
 
-## I.3 Morning Reveal Test
+Daybreak uses the average grayscale brightness of camera frames as a simple measure of environmental light.
 
-The morning report was tested using the successful controlled-test data.
+The observation process:
 
-The program produced:
+1. Captures initial frames to establish a nighttime brightness baseline.
+2. Continues sampling the camera at regular intervals.
+3. Compares new brightness measurements against the baseline.
+4. Checks whether the brightness increase exceeds the selected threshold.
+5. Requires multiple consecutive qualifying samples before confirming an event.
+6. Records the event time and saves an associated photograph.
 
-```text
-DAYBREAK | MORNING REVEAL
+Requiring consecutive qualifying measurements helps prevent the system from treating a single brief brightness fluctuation as sustained daylight.
 
-Good morning. Daybreak first detected
-sustained brightness at 11:11:38 AM,
-confirmed at 11:11:44 AM.
-
-The observation contains 20 recorded samples.
-
-Captured image:
-daybreak_data/photos/first_sustained_daylight.jpg
-```
-
-The audio version was also tested successfully through the connected speaker.
-
-This confirmed that the system could retrieve its recorded event and communicate the result through a physical output device.
-
-### Morning Report
-
-![Morning Reveal](media/daybreak/screenshots/Lab5B_Daybreak_Morning_Reveal_Audio_Test.png)
-
-The morning interaction completes the intended sequence from bedtime acknowledgment to overnight observation and morning feedback.
+This is a deliberately simple computer vision approach. It does not use a trained sunrise classifier or directly measure physical illuminance in lux.
 
 ---
 
-# Looks Like, Works Like, Acts Like
+## 4. Development and Testing Process
 
-## Looks Like
+I developed and tested Daybreak incrementally rather than immediately attempting a full overnight observation.
 
-Daybreak is a compact Raspberry Pi setup with a camera facing a window and a speaker providing verbal feedback.
+### Test 1: Camera and OpenCV Validation
 
-Its physical arrangement is intentionally simple so that it can remain in place overnight without requiring active user interaction.
+I first verified that the Raspberry Pi could access the connected camera through OpenCV.
 
-The initial and revised storyboards illustrate the intended interaction.
+The camera successfully opened and returned a frame at a resolution of 640 × 480 pixels. I also verified that the system could calculate average grayscale brightness and save a captured image.
 
-## Works Like
+This established that the camera and image-processing environment were functioning before integrating the full overnight workflow.
 
-Daybreak periodically captures images, calculates average grayscale brightness, and compares the results against an initial baseline.
+![Initial brightness test](media/daybreak/screenshots/Lab5B_Daybreak_Initial_Brightness_Test.png)
 
-A sustained increase above the configured threshold triggers an event record and photograph.
+### Test 2: Controlled Brightness Detection
 
-The morning program retrieves the recorded information and generates a readable and spoken summary.
+I then used a controlled window and curtain demonstration to test the detection logic without waiting for an actual sunrise.
 
-## Acts Like
+The system recorded brightness samples, established a baseline, and evaluated whether the measured brightness increased sufficiently for the required number of consecutive observations.
 
-At bedtime, Daybreak acknowledges the user's request to begin observing.
+An initial test used a threshold increase of 20 brightness units and did not detect a sustained event. A subsequent test lowered the threshold increase to 8 units and successfully exercised the detection workflow.
 
-During the night, it quietly collects information.
+During the successful controlled test, the software generated an event record and saved a photograph.
 
-In the morning, it shares what it observed.
+![Sustained daylight detection test](media/daybreak/screenshots/Lab5B_Daybreak_Sustained_Daylight_Detection_Test.png)
 
-The device behaves as a passive observer rather than an alarm, allowing the user to discover the result when they are ready.
+The controlled test confirmed that the sensing, event-recording, and photograph-saving pipeline could operate together.
 
----
+### Test 3: Morning Report and Audio Output
 
-# Reflection
+After verifying the observation pipeline, I tested the morning report independently.
 
-## What Worked
+The script successfully retrieved a stored event and reported its detection time, confirmation time, sample count, and photograph location.
 
-The camera successfully captured images and provided brightness measurements through OpenCV.
+I then tested the spoken version using the connected speaker. The audio output worked, demonstrating that the sensing results could be communicated through sound rather than requiring the user to inspect the log manually.
 
-The controlled curtain-opening test demonstrated that the system could detect a sustained brightness increase using a baseline, threshold, and consecutive-sample requirement.
+![Morning reveal audio test](media/daybreak/screenshots/Lab5B_Daybreak_Morning_Reveal_Audio_Test.png)
 
-The system successfully recorded a timestamped event and saved a photograph.
+### Test 4: Bedtime Handoff
 
-The bedtime handoff produced a spoken acknowledgment, and the morning reveal successfully communicated the recorded result through the speaker.
+I added a bedtime entry point that provides an acknowledgment before starting the observation process.
 
-Together, these tests demonstrated the major components of the Daybreak interaction.
+This was important for the interaction design because the user needs confirmation that the device has accepted the request and begun monitoring.
 
-## What Was Challenging
+The handoff and observation process were tested together before the final overnight deployment.
 
-The largest challenge was determining how to interpret camera brightness reliably.
-
-Automatic exposure made it difficult to associate a particular grayscale measurement with a specific amount of natural light.
-
-The threshold also required calibration.
-
-The initial threshold did not trigger during the controlled test, while the revised threshold successfully detected the simulated event.
-
-These observations emphasized the importance of testing the sensor under realistic conditions rather than assuming that a numerical threshold would generalize across environments.
-
-## What I Would Improve
-
-A future version could:
-
-1. Experiment with fixed camera exposure.
-2. Use a longer or adaptive baseline-calibration period.
-3. Plot brightness measurements over the full observation period.
-4. Compare results across multiple real mornings.
-5. Add a dedicated ambient-light sensor for more consistent illumination measurements.
-6. Provide a small display showing the captured image and detected event time.
-
-## Final Reflection
-
-Daybreak demonstrates how a simple numerical sensor measurement can become part of a meaningful interactive experience.
-
-The project combines a bedtime handoff, independent overnight observation, and a morning reveal into a single interaction.
-
-The controlled tests verified the sensing and reporting pipeline, while also revealing important limitations associated with camera exposure and threshold calibration.
-
-The real overnight test will provide additional evidence about how well the system performs under natural lighting conditions.
+![Bedtime handoff test](media/daybreak/screenshots/Lab5B_Daybreak_Bedtime_Handoff_Test.png)
 
 ---
 
-# Final Demonstration Video
+## 5. A Critical Discovery: Artificial Light and the Nighttime Baseline
 
-**Status: Pending final video recording and upload.**
+One of the most important findings occurred during preparation for the real overnight observation.
 
-The final demonstration will show the physical Daybreak setup, bedtime acknowledgment, observation process, saved data, and spoken morning reveal.
+### Initial Overnight Attempt
 
-The video will be uploaded to:
+During the first nighttime attempt, the room lights were still on while the camera faced the window.
 
-`media/daybreak/video/`
+The system established a baseline of approximately **81.85 grayscale brightness units**.
 
-The demonstration link will be added here after recording.
+Because the detection threshold was set to an increase of 8 units, subsequent measurements near 93 were sufficient to trigger the detection logic.
+
+The system therefore reported sustained daylight at approximately 2:53 AM, even though the intended environmental event had not occurred.
+
+This was a false positive.
+
+The issue was not that the code failed to execute. Rather, the brightness-based detection method responded to lighting conditions that did not represent actual daylight.
+
+### Why This Happened
+
+The camera was facing a window, but the image could still be influenced by light originating inside the room.
+
+Indoor lighting may affect the image through reflections, illuminated foreground objects, or the camera's automatic exposure and gain adjustments.
+
+The exact contribution of these factors was not measured independently, so I cannot attribute the false detection to one specific camera setting.
+
+However, the experiment demonstrated that the camera's brightness measurements were sensitive to the physical lighting environment, not only the outdoor sky.
+
+### Revised Overnight Setup
+
+To address this, I turned off the room lights and restarted the observation with the camera in the same window-facing position.
+
+This removed a major source of artificial illumination from the scene.
+
+The real overnight observation established a much lower nighttime baseline of **26.92 grayscale brightness units**.
+
+This lower baseline was more representative of the dark environment I wanted Daybreak to observe. It also provided a clearer reference for measuring the transition toward natural morning light.
+
+Importantly, the improvement came from changing the physical setup rather than simply adding more complicated software.
+
+### Design Lesson
+
+This experiment showed that the environment surrounding a sensor is part of the interaction system.
+
+Camera placement, indoor illumination, reflections, and possible automatic camera adjustments can all affect the meaning of a brightness measurement.
+
+For Daybreak, controlling the lighting conditions at bedtime proved essential to making the morning detection more meaningful.
 
 ---
 
-## Source Code
+## 6. Final Real Overnight Observation
 
-- [Bedtime Handoff](daybreak_start.py)
-- [Overnight Observation](daybreak_overnight.py)
-- [Morning Reveal](daybreak_morning.py)
+After completing the controlled tests and revising the nighttime setup, I ran Daybreak overnight with the Raspberry Pi powered independently and the camera facing the window.
 
-## Documentation and Evidence
+### Final Run Configuration
 
-- [Initial Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Initial_Storyboard.png)
-- [Revised Storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Revised_Storyboard.png)
-- [Storyboard Feedback](media/daybreak/storyboard/Lab5B_Daybreak_Storyboard_Feedback.md)
-- [Initial Brightness Test](media/daybreak/screenshots/Lab5B_Daybreak_Initial_Brightness_Test.png)
-- [Sustained Detection Test](media/daybreak/screenshots/Lab5B_Daybreak_Sustained_Daylight_Detection_Test.png)
-- [Bedtime Handoff Test](media/daybreak/screenshots/Lab5B_Daybreak_Bedtime_Handoff_Test.png)
-- [Morning Audio Test](media/daybreak/screenshots/Lab5B_Daybreak_Morning_Reveal_Audio_Test.png)
-- [Controlled-Test Photograph](media/daybreak/photos/Lab5B_Daybreak_Controlled_Daylight_Capture.jpg)
-- [Controlled-Test Log](media/daybreak/logs/Lab5B_Daybreak_Controlled_Test_Log.jsonl)
-- [Controlled-Test Event](media/daybreak/logs/Lab5B_Daybreak_Controlled_Test_Event.json)
+| Parameter | Value |
+|---|---|
+| Camera orientation | Window-facing |
+| Sampling interval | 30 seconds |
+| Brightness threshold increase | 8 grayscale units |
+| Consecutive qualifying samples | 3 |
+| Configured observation duration | 32,400 seconds (9 hours) |
+| Nighttime brightness baseline | 26.92 |
+| Observation date | November 3, 2026 |
+
+The system collected hundreds of time-stamped brightness observations across the night and recorded a confirmed sustained daylight event in the morning.
+
+### Recorded Results
+
+<text>This line is plain Markdown table content for the GitHub README.</text>
+
+| Measurement | Result |
+|---|---|
+| First sustained daylight detection | **6:11:42 AM EST** |
+| Daylight confirmation | **6:12:42 AM EST** |
+| Nighttime baseline | **26.92** |
+| Threshold increase | **8.0** |
+| Required consecutive samples | **3** |
+| Recorded samples | Approximately **890** |
+| Captured photograph | `first_sustained_daylight.jpg` |
+
+The event record provides the exact timestamps, baseline, threshold, and photograph reference.
+
+### Overnight Evidence
+
+- [View real overnight observation log](media/daybreak/logs/Lab5B_Daybreak_Overnight_Log.jsonl)
+- [View real overnight event record](media/daybreak/logs/Lab5B_Daybreak_Overnight_Event.json)
+- [View captured daylight photograph](media/daybreak/photos/Lab5B_Daybreak_Overnight_Daylight_Capture.jpg)
+
+### Interpretation
+
+The result was encouraging because the detected event occurred during the early morning and produced a photograph showing a visibly brighter sky above a dark foreground.
+
+The timing was plausible for the particular window orientation and outdoor scene being observed. It also aligned with the visual goal of the prototype: identifying the first sustained increase in morning brightness rather than waiting until the entire scene was brightly illuminated.
+
+The photograph is not a perfect representation of a fully exposed outdoor scene, but that was not the objective. It captures a recognizable transition between nighttime darkness and the beginning of daylight.
+
+This was a successful demonstration of Daybreak's intended interaction, although the event time should be interpreted as a camera-based brightness threshold crossing rather than a verified astronomical sunrise time.
 
 ---
 
-# AI Assistance
+## 7. Final Video Demonstrations | Acts Like
 
-I used ChatGPT to assist with concept refinement, interaction planning, Python implementation, Raspberry Pi troubleshooting, test interpretation, and documentation organization.
+The completed interaction is documented in two videos.
 
-I performed the hardware setup, camera and speaker testing, controlled daylight simulation, program execution, and observation of the physical prototype's behavior.
+### Video 1: Bedtime Handoff
 
-The repository includes the implementation files, storyboards, test results, and supporting documentation.
+[Watch the Bedtime Handoff Demonstration](media/daybreak/video/Daybreak_Video_Demonstrations.md)
+
+This demonstration shows the start of the experience, including the spoken acknowledgment that Daybreak is beginning its overnight observation.
+
+### Video 2: Morning Reveal
+
+[Watch the Morning Reveal Demonstration](media/daybreak/video/Daybreak_Video_Demonstrations.md)
+
+This demonstration shows the next-morning interaction, when the system retrieves the overnight observation and verbally reports the detected daylight event.
+
+Both Google Drive videos are indexed here:
+
+**[Daybreak | Video Demonstrations](media/daybreak/video/Daybreak_Video_Demonstrations.md)**
+
+Together, the videos demonstrate the complete user experience from bedtime to the morning report.
+
+---
+
+## 8. Reflection
+
+### How did sensing shape the interaction?
+
+The sensing method determined the entire structure of Daybreak.
+
+Because daylight changes gradually, a single image would not provide enough context to distinguish a meaningful transition from an isolated fluctuation.
+
+The system therefore needed a baseline, repeated observations, a threshold, and a requirement for sustained brightness.
+
+These decisions shaped the interaction into an overnight process rather than an immediate response to one sensor reading.
+
+### How did the physical arrangement affect the result?
+
+Physical arrangement was one of the most important variables.
+
+The camera needed a stable view of the window, but the indoor lighting conditions also mattered.
+
+The initial false detection demonstrated that a camera can respond to artificial illumination even when it is intended to observe the outdoor environment.
+
+Turning off the room lights and repeating the observation produced a more appropriate nighttime baseline and a more convincing morning event.
+
+This made the physical setup an essential part of the sensing logic.
+
+### What adjustments were necessary?
+
+Several adjustments were made during development:
+
+- Verified camera access and image capture before running the complete system.
+- Tested different brightness thresholds during controlled demonstrations.
+- Used consecutive qualifying samples to avoid immediate single-frame detections.
+- Added a spoken morning report to make the observation accessible.
+- Added a verbal bedtime acknowledgment to confirm the handoff.
+- Corrected the Python environment so OpenCV was available when the overnight process launched.
+- Used a persistent terminal session to allow the Raspberry Pi to continue operating after the laptop disconnected.
+- Removed indoor lighting before the final overnight run to reduce interference.
+
+Each adjustment addressed a practical issue discovered through testing.
+
+### What worked well?
+
+The strongest result was the completed overnight interaction.
+
+Daybreak successfully recorded a sustained brightness event at 6:11:42 AM, confirmed it at 6:12:42 AM, and produced an associated image of the early morning sky.
+
+The morning report also worked with spoken output, allowing the user to hear the result rather than manually interpreting raw measurements.
+
+### What were the limitations?
+
+The main limitation is that average image brightness is an indirect measurement of daylight.
+
+It can be affected by artificial light, reflections, shadows, weather, camera exposure, and changes in the observed scene.
+
+The nighttime baseline was established from a small number of initial samples, making the system sensitive to conditions at the moment observation begins.
+
+The final overnight test demonstrated a plausible daylight detection, but it did not establish performance across multiple nights, weather conditions, or camera placements.
+
+### What would I improve next?
+
+I would explore several improvements:
+
+1. **Region-based brightness measurement:** Analyze only the portion of the image containing the outdoor sky, reducing interference from the window frame and indoor foreground.
+2. **Exposure control:** Experiment with fixed camera exposure and gain, where supported, to make brightness measurements more consistent.
+3. **Adaptive baseline estimation:** Use a longer nighttime calibration period or a robust rolling baseline.
+4. **Repeated overnight testing:** Compare detection results across multiple mornings and lighting conditions.
+5. **Hands-free morning interaction:** Extend the audio input to support a spoken request for the morning report.
+6. **Automatic morning notification:** Make the recorded event available without requiring a manual SSH connection.
+
+These changes would help transform Daybreak from a working prototype into a more robust daily-use device.
+
+---
+
+## 9. Final Deliverables
+
+### Source Code
+
+- [daybreak_start.py](daybreak_start.py)
+- [daybreak_overnight.py](daybreak_overnight.py)
+- [daybreak_morning.py](daybreak_morning.py)
+
+### Physical Prototype and Photographs
+
+- [Overnight hardware setup](media/daybreak/photos/Lab5B_Daybreak_Overnight_Hardware_Setup.jpeg)
+- [Real overnight daylight capture](media/daybreak/photos/Lab5B_Daybreak_Overnight_Daylight_Capture.jpg)
+- [Controlled daylight capture](media/daybreak/photos/Lab5B_Daybreak_Controlled_Daylight_Capture.jpg)
+
+### Overnight Results
+
+- [Overnight observation log](media/daybreak/logs/Lab5B_Daybreak_Overnight_Log.jsonl)
+- [Overnight detection event](media/daybreak/logs/Lab5B_Daybreak_Overnight_Event.json)
+
+### Demonstration Videos
+
+- [Bedtime handoff and morning reveal](media/daybreak/video/Daybreak_Video_Demonstrations.md)
+
+### Additional Design Documentation
+
+- [Initial storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Initial_Storyboard.png)
+- [Revised storyboard](media/daybreak/storyboard/Lab5B_Daybreak_Revised_Storyboard.png)
+- [Storyboard feedback](media/daybreak/storyboard/Lab5B_Daybreak_Storyboard_Feedback.md)
+
+---
+
+## 10. Conclusion
+
+Daybreak began as an exploration of how an interactive device could respond to a slow environmental transition rather than an immediate button press or command.
+
+Through the project, I developed a working camera-based observation system, added verbal feedback, tested the detection logic under controlled conditions, and completed a real overnight run.
+
+The most important lesson was that sensing is inseparable from context. The first nighttime attempt produced a false detection because the camera's measured brightness was influenced by the surrounding lighting environment. After removing the artificial light and restarting the observation, the system established a more appropriate baseline and recorded a plausible early-morning daylight event.
+
+The final photograph, timestamped event, observation log, and spoken morning report demonstrate the complete interaction.
+
+Daybreak ultimately shows how a small interactive device can turn an ordinary environmental change into a personal, understandable experience.
+
+### AI Assistance
+
+I used ChatGPT to assist with Python development, debugging, command-line troubleshooting, experimental planning, and organizing the documentation. I performed the hardware setup, controlled tests, overnight observation, media capture, and evaluation of the results.
+
 
 ---
 
