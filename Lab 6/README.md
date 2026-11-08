@@ -7,6 +7,8 @@
 
 **Team:** Three-person collaborative project. Final demonstration completed with two active Raspberry Pis following consultation with DTA Albert.
 
+**Author:** Jonathan Sharpy (GitHub: `jjs564-gif`)
+
 ---
 
 # Part A: MQTT Messaging
