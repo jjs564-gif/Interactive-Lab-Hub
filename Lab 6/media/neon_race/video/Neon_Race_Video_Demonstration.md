@@ -10,4 +10,4 @@ The original design included three Raspberry Pis. During integration testing, on
 
 The demonstration captures the distributed interaction, including the physical sensor inputs, network communication, and synchronized game behavior.
 
-**Recording:** `Lab6C_Neon_Race_Multiplayer_Demonstration.mp4`
+**Recording:** `Lab6C_Neon_Race_Multiplayer_Demonstration.MOV`
