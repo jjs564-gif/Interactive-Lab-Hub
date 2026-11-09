@@ -3,9 +3,15 @@
 **ECE 5413 | Developing and Designing Interactive Devices**  
 **Fall 2026 | Cornell Tech**
 
+**Team Members:**
+
+- **Jonathan Sharpy**
+- **Gal Alon**
+- **Stephen Monahan**
+
 **Project:** NEON RACE | A Distributed Multiplayer Reaction Game
 
-**Team:** Three-person collaborative project. Final demonstration completed with two active Raspberry Pis following consultation with DTA Albert.
+**Team Configuration:** Three-person collaborative project. Final demonstration completed with two active Raspberry Pis following consultation with DTA Albert.
 
 **Author:** Jonathan Sharpy (GitHub: `jjs564-gif`)
 
@@ -480,15 +486,59 @@ We would also conduct structured external user testing to determine whether the 
 
 For a competitive reaction game, it would be valuable to investigate the effects of MQTT latency and differences in sensor processing time on round outcomes.
 
-## C.11 Team Collaboration and AI Assistance
+## C.11 Team Contributions and AI Assistance
 
-NEON RACE was developed collaboratively, with team members contributing to the concept, implementation, integration, and testing.
+### Team Contributions
 
-The project incorporated team-generated Python code and iterative troubleshooting across the participating Raspberry Pis.
+Our team consisted of **Jonathan Sharpy, Gal Alon, and Stephen Monahan**. We developed NEON RACE through several iterations, beginning with the initial concept and progressing toward a fully integrated multiplayer reaction game.
 
-AI assistance was used during development for brainstorming, understanding MQTT architecture, preparing setup instructions, troubleshooting Python environments and hardware initialization, and organizing documentation.
+**Jonathan Sharpy | Initial Implementation and Hardware Integration**
 
-The final hardware testing and recorded multiplayer demonstration were performed by the team.
+- I completed the MQTT publish/subscribe testing and verified successful communication through the Cornell course broker.
+- I configured and tested my Raspberry Pi and APDS-9960 RGB sensor for the collaborative pixel grid.
+- I developed our first working iteration of the multiplayer reaction game, exploring shared challenges, physical sensor responses, and MQTT communication.
+- I configured my Python environment, connected the camera and sensor, and helped integrate the final NEON RACE implementation.
+- I organized the supporting screenshots, source files, demonstration video, and final README documentation.
+
+**Gal Alon | Concept Development and Interaction Design**
+
+- Gal proposed our original multiplayer reaction game concept, where multiple Raspberry Pis compete to complete the same sensor-based challenge.
+- His concept established the core gameplay structure, including synchronized tasks, physical responses, round winners, and scoring.
+- He contributed to our discussions about MQTT communication, system architecture, and gameplay improvements.
+- He participated in our integration and troubleshooting process.
+
+**Stephen Monahan | Final Implementation and Software Development**
+
+- Stephen developed the final NEON RACE implementation that our team ultimately used.
+- His version expanded our initial prototype into a more advanced game, incorporating graphical PiTFT feedback, sensor-based challenges, MQTT coordination, and multiplayer scoring.
+- He helped configure and integrate the software across our Raspberry Pis.
+- He participated in debugging and testing the final multiplayer interaction.
+
+### Collaborative Integration and Troubleshooting
+
+While each of us led different parts of the project, we worked together throughout the integration process.
+
+We verified that our Raspberry Pis had the correct Python environments, dependencies, and source files. To streamline setup, we shared a document containing the required files and terminal commands in the correct execution order.
+
+We also worked together to troubleshoot camera initialization, sensor availability, MQTT communication, and hardware compatibility. One of our largest challenges was Gal's PiTFT display, which we all attempted to troubleshoot but were ultimately unable to restore during the available class time.
+
+After consulting DTA Albert, we proceeded with a two-device multiplayer demonstration. Our final test successfully demonstrated physical sensor interactions, MQTT communication, and coordinated game feedback, which we documented in our video.
+
+### AI Assistance
+
+Throughout the project, we used AI tools, including **ChatGPT and Claude**, to assist with brainstorming, understanding MQTT communication, developing the initial game implementation, refining our interaction concept, troubleshooting software dependencies, and organizing our documentation.
+
+We reviewed and tested the AI-assisted suggestions through actual implementation on our Raspberry Pis. The final NEON RACE application was developed by Stephen, building on Gal's original concept and our earlier prototype.
+
+All hardware integration, physical testing, debugging, and the final multiplayer demonstration were carried out by our team.
+
+### Final Reflection on Collaboration
+
+This lab highlighted how iterative development and collaboration can improve an engineering project. Gal's initial concept provided the foundation for the game, my first implementation helped us explore the technical approach, and Stephen's final version brought everything together into a more polished and interactive experience.
+
+One of our biggest takeaways was that a distributed system depends on more than functional code. Every participating device needs compatible software, reliable sensors, working hardware, and consistent network communication.
+
+Although we encountered hardware limitations that prevented our original three-player demonstration, we worked together to adapt the system and successfully demonstrate the multiplayer interaction using two Raspberry Pis.
 
 ---
 
